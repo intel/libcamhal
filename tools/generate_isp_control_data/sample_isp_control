@@ -1,0 +1,26 @@
+// This is a sample data file to indicate how to the data organized.
+// C/C++ styled one-line comment '//' is supported.
+// feature_enabled can be used to control if the ISP control feature enabled or not.
+// For each control, the members are not provided here will be set to 0.
+
+camera_control_isp_ctrl_id_wb_gains
+gr:   1.0
+r:    1.0
+b:    1.0
+gb:   1.0
+
+camera_control_isp_ctrl_id_color_correction_matrix
+feature_enabled:1
+ccm_gains[0]:   1.0
+ccm_gains[1]:   1.0
+ccm_gains[2]:   1.0
+ccm_gains[3]:   1.0
+ccm_gains[4]:   1.0
+ccm_gains[5]:   1.0
+ccm_gains[6]:   1.0
+ccm_gains[7]:   1.0
+ccm_gains[8]:   1.0
+
+camera_control_isp_ctrl_id_bxt_demosaic
+feature_enabled:0
+checkers_removal_w:1

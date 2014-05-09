@@ -1,0 +1,44 @@
+#
+#  Copyright (C) 2016 Intel Corporation
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+#
+Under ubuntu, make rpm package for libcamhal.
+
+*****************************************************
+Prerequisite for build RPM package:
+
+Install rpmbuild under ubuntu if needed,
+sudo apt-get install rpm
+
+Install auto-make utils needed for building the rpm from source,
+sudo apt-get install autoconf libtool
+
+*****************************************************
+Build RPM for libcamhal:
+
+Run the shell script under this directory to build rpm in this
+directory.
+
+./build_rpm.sh
+
+*****************************************************
+Install the built RPM:
+
+Install under default directories /usr/lib64, /usr/include and /etc as below,
+
+sudo rpm -ivh libcamhal-xxx.x86_64.rpm --nodeps
+
+Or, relocatable install, like below,
+
+rpm -ivh --noparentdirs --relocate /etc=/your/own/dir --relocate /usr=/your/own/dir libcamhal-1.0.0-2.x86_64.rpm

@@ -1,0 +1,126 @@
+#
+#  Copyright (C) 2014-2018 Intel Corporation
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+#
+
+Prerequisites (Ubuntu 14.04):
+
+Make sure libcamera is built before building libcamhal_test
+
+Building libcamhal_test:
+
+For different IPU version (ipu4 by default):
+    IPU_VER=ipu6 make -j
+
+For mock (with valgrind check):
+    make clean
+    enable_mock_test=true make -j
+
+    Run test-mock.sh directly will help you to build and run all cases automatically,
+    for detailed info, please check that script.
+
+    Besides, run test-mock.sh will also make valgrind check, error suppressions are included in .supp file, please check the valgrind_err.log file for newly introduced valgrind errors after running this script.
+
+Not mock:
+    In your local machine:
+    make clean
+    make -j
+
+    In hardware board:
+    make clean
+    export LD_LIBRARY_PATH=gmock/lib:../.libs
+    dynamic_link=true make -j
+
+    make-all.sh can help you build both libcamhal and libcamhal_test.
+
+How to run:
+    copy all xml in the config folder to the board
+    copy libcamhal_test and test-all.py to the board to make sure the app and xml are in the same folder.
+
+  1) ./libcamhal_test
+
+    If you want to run specific case, you can list all cases first by ./libcamhal_test --gtest_list_tests
+    And then run ./libcamhal_test --gtest_filter="*specific_case_name*"
+    For other available options, please check ./libcamhal_test --help
+
+  2) ./test-all.py
+
+    If you want to run all cases in libcamhal UT for different sensors automatically,
+    you can select sensor after you run this line
+    test-all.py will run BE and MIPI tests together. It will prompt input request to select camera input.
+
+Check test result:
+    You can check the terminal output for test result.
+
+    In case you want to do image corruption checking, please "export cameraImageCheck=on".
+
+Test case camPsysTest.*:
+    for the case camPsysTest.*, if you would like to use input file instead of the auto generated image,
+    please "export cameraInputFromFile=true".
+    the file must be in the same folder with the executable program.
+    and the file name should be frame_xxx_xxx.xxx, such as: ./frame_1920_1080.RGGB12V32
+
+Please note that: Dump file is disabled by default for saving test time.
+For debug purpose, please execute: export cameraDump=256
+
+
+New Script Briefing
+===================
+    * dispose_log.py: provides three functions--1)Summarize testing
+      results in brief; 2)Extract cases and errors from testing result
+      log to json file, new cases(with errors) will be appended to
+      existed json file, and new errors will be inserted;
+      3)Compare error info of cases between result log and json file.
+
+      Summarize and compare functions are called by test-all.py
+      automatically during testing.
+      Extract function is for developer maually.
+
+    * camera_compare.json: contains nonfatal errors for all case
+      results to compare, and will be updated at any time.
+
+Using Guide
+===========
+Example:
+
+    In the test directory:
+
+    1) Get usage
+      ::
+          ./dispose_log.py -h
+
+          ./dispose_log.py summary -h
+          ./dispose_log.py extract -h
+          ./dispose_log.py compare -h
+
+    2) Call summarize and compare functions by test_all.py
+      ::
+          ./test_all.py
+
+    3) Call functions by commands:
+      ::
+          ./dispose_log.py summary -f <filename>
+
+          ./dispose_log.py extract -f <filename>
+          ./dispose_log.py extract -f <filename> -j <jsonfile>
+
+          ./dispose_log.py compare -f <filename> -j <jsonfile>
+
+          Eg.
+              filename: imx185_non-mipi.log
+              jsonfile: camera_compare.json
+
+          Note: Extract subcommand supports optional option '-j', with which
+                some json file is specified; otherwise 'camera_compare.json'
+                is extracted to by default.

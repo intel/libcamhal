@@ -1,0 +1,94 @@
+{
+    "cameraCpfTest.cpf_load_emptyName": [
+        "CpfConf:empty sensor name",
+        "CpfConf:@CpfStore:get file name fail: "
+    ],
+    "camHalTest.camera_device_start_without_qbuf": [
+        "Camera-Device:@start: start in wrong status 2"
+    ],
+    "camHalTest.camera_device_start_without_add_stream": [
+        "Camera-Device:@start: start in wrong status 1"
+    ],
+    "camHalTest.camera_device_start_twice_stop_once": [
+        "Camera-Device:@start: start in wrong status 3"
+    ],
+    "camPsysTest.test_video0_dag_720p_raw10_to_nv12": [
+        "ISP_PARAM_ADAPTOR:No invalid aiq result needed to run Generic AIC"
+    ],
+    "camHalRawTest.camera_device_open_without_hal_init": [
+        "LIB_CAMHAL:HAL is not initialized"
+    ],
+    "camHalTest.camera_device_start_stop_normal": [
+        "Capture-Unit:grab frame failed. ret -1"
+    ],
+    "camPsysTest.test_video0_dag_1080p_vector_raw10_to_nv12": [
+        "ISP_PARAM_ADAPTOR:No invalid aiq result needed to run Generic AIC"
+    ],
+    "camPsysTest.test_video0_dag_720p_vector_raw12_to_nv12": [
+        "ISP_PARAM_ADAPTOR:No invalid aiq result needed to run Generic AIC"
+    ],
+    "camPsysTest.test_video0_dag_1080p_vector_raw8_to_nv12": [
+        "ISP_PARAM_ADAPTOR:No invalid aiq result needed to run Generic AIC"
+    ],
+    "camPsysTest.test_vieo_pre_post_gdc_dag_1080p_vector_raw12_to_nv12": [
+        "ISP_PARAM_ADAPTOR:No invalid aiq result needed to run Generic AIC"
+    ],
+    "camPsysTest.test_video0_dag_720p_raw12_to_nv12": [
+        "ISP_PARAM_ADAPTOR:No invalid aiq result needed to run Generic AIC"
+    ],
+    "camHalRawTest.get_camera_info_with_invalid_camera_id": [
+        "CASE_STATIC_INFO:Error... during get camera info ret=-22"
+    ],
+    "camPsysTest.test_video0_dag_1080p_raw10_to_nv12": [
+        "ISP_PARAM_ADAPTOR:No invalid aiq result needed to run Generic AIC"
+    ],
+    "camPsysTest.test_video0_dag_720p_vector_raw8_to_nv12": [
+        "ISP_PARAM_ADAPTOR:No invalid aiq result needed to run Generic AIC"
+    ],
+    "camPsysTest.test_video0_dag_720p_vector_raw10_to_nv12": [
+        "ISP_PARAM_ADAPTOR:No invalid aiq result needed to run Generic AIC"
+    ],
+    "camHalRawTest.param_operation_without_init": [
+        "LIB_CAMHAL:HAL is not init."
+    ],
+    "camHalTest.camhal_qbuf_dqbuf_all_supported_resolution_format": [
+        "Capture-Unit:grab frame failed. ret -1"
+    ],
+    "camHalTest.camera_device_config_streams_invalid_param": [
+        "Camera-Device:stream configuration is not supported. format:V4L2_PIX_FMT_YUYV (0x1080)",
+        "Camera-Device:stream configuration is not supported. format:V4L2_PIX_FMT_SRGGB10V32 (0x1080)",
+        "Camera-Device:stream configuration is not supported. format:V4L2_PIX_FMT_NV12 (1920x0)",
+        "LIB_CAMHAL:failed to config streams.",
+        "Camera-Device:stream configuration is not supported. format:V4L2_PIX_FMT_NV12 (0x1080)",
+        "CamHAL-Utils:pixelCode2String, Unknown Pixel Format (413413)",
+        "Camera-Device:stream configuration is not supported. format:V4L2_PIX_FMT_SRGGB10V32 (1234x421)",
+        "Camera-Device:stream configuration is not supported. format:V4L2_PIX_FMT_SGRBG8V32 (1920x0)",
+        "Camera-Device:stream configuration is not supported. format:V4L2_PIX_FMT_SGRBG8 (1234x421)",
+        "Camera-Device:stream configuration is not supported. format:V4L2_PIX_FMT_SGRBG8V32 (0x1080)",
+        "Camera-Device:stream configuration is not supported. format:V4L2_PIX_FMT_YUYV (1234x421)",
+        "Camera-Device:stream configuration is not supported. format:Unknow (1920x1080)",
+        "Camera-Device:stream configuration is not supported. format:V4L2_PIX_FMT_YUYV (1920x0)",
+        "CAMHAL_INTERFACE:camera stream is NULL.",
+        "CamHAL-Utils:pixelCode2String, Unknown Pixel Format (-1)",
+        "Camera-Device:stream configuration is not supported. format:V4L2_PIX_FMT_SGRBG8 (0x1080)",
+        "Camera-Device:stream configuration is not supported. format:V4L2_PIX_FMT_SGRBG8V32 (1234x421)",
+        "Camera-Device:stream configuration is not supported. format:V4L2_PIX_FMT_NV12 (1234x421)",
+        "Camera-Device:stream configuration is not supported. format:V4L2_PIX_FMT_SRGGB10V32 (1920x0)",
+        "Camera-Device:stream configuration is not supported. format:V4L2_PIX_FMT_SGRBG8 (1920x0)"
+    ],
+    "camPsysTest.test_video0_dag_720p_raw8_to_nv12": [
+        "ISP_PARAM_ADAPTOR:No invalid aiq result needed to run Generic AIC"
+    ],
+    "camPsysTest.test_video0_dag_1080p_raw8_to_nv12": [
+        "ISP_PARAM_ADAPTOR:No invalid aiq result needed to run Generic AIC"
+    ],
+    "camPsysTest.test_video0_dag_1080p_vector_raw12_to_nv12": [
+        "ISP_PARAM_ADAPTOR:No invalid aiq result needed to run Generic AIC"
+    ],
+    "camPsysTest.test_video0_dag_1080p_raw12_to_nv12": [
+        "ISP_PARAM_ADAPTOR:No invalid aiq result needed to run Generic AIC"
+    ],
+    "camHalTest.camera_device_try_to_open_all_cameras": [
+        "CamHAL-Utils:@getSubDeviceName, open file /sys/class/video4linux/v4l-subdev17/name failed. err: No such file or directory"
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "FileAppendix" : [".cpp", ".c", ".cc", ".h", ".am", ".txt", ".mk", "Makefile"],
+
+    "Features" : ["FILE_SOURCE", "LITE_PROCESSING", "CUSTOMIZED_3A", "IPU6_FEATURE", "CUSTOM_WEIGHT_GRID", "INTEL_DVS", "LOCAL_TONEMAP"],
+
+    "Folders"  : ["halv3", "halv1", "src/core/psyslite", "src/3a/external"],
+
+    "Ifdefs" : ["ENABLE_VIRTUAL_IPU_PIPE", "BYPASS_MODE", "IPU_SYSVER_IPU6"],
+
+    "Files"    : ["src/core/FileSource.*", "src/core/ATEUnit.*",
+                  "test/UT/case_camera_psyslite.cpp",
+                  "src/platformdata/gc/GraphConfigV2.cpp",
+                  "src/platformdata/TunningProfiles.*",
+                  "src/3a/IntelDvs.*",
+                  "src/3a/Ltm.*", "include/api/AlgoTuning.h",
+                  "**/CMakeLists.txt"]
+}

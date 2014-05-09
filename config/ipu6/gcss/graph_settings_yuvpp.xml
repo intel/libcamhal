@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (c) 2018 Intel Corporation
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<graph_settings>
+
+    <sensor_modes>
+        <sensor_mode name="1920x1080" id="0" width="1920" height="1080"/>
+        <sensor_mode name="2816x1600" id="1" width="2816" height="1600"/>
+        <sensor_mode name="3840x2160" id="2" width="3840" height="2160"/>
+        <sensor_mode name="640x480" id="3" width="640" height="480"/>
+        <sensor_mode name="1280x720" id="4" width="1280" height="720"/>
+    </sensor_modes>
+
+    <!-- ISA+LB+BB_TNR 1920x1080-->
+    <settings key="9811" id="100033" op_mode="NORMAL" active_outputs="1">
+        <video0 width="1920" height="1080" stream_id="60001"/>
+        <sensor mode_id="1920x1080" analogue_gain="0" exposure="100" vflip="0" hflip="0">
+            <port_0 type="port" width="1920" height="1080" format="YUY2"/>
+        </sensor>
+        <csi_be_soc>
+            <output width="1920" height="1080" format="IYUV"/>
+        </csi_be_soc>
+        <ipu6_post_gdc_video_3 stream_id="60001">
+            <main width="1920" height="1080" format="NV12" peer="video0"/>
+            <display enabled="0"/>
+            <postproc enabled="0"/>
+            <gdc5>
+                <input width="1920" height="1080" left="0" top="0" right="0" bottom="0"/>
+                <output width="1920" height="1080" left="0" top="-28" right="0" bottom="-12"/>
+            </gdc5>
+            <tnr_6_0>
+                <input width="1920" height="1120" left="0" top="28" right="0" bottom="4"/>
+            <output width="1920" height="1088" left="0" top="0" right="0" bottom="0"/>
+            </tnr_6_0>
+            <ofa_2_mp>
+                <input width="1920" height="1088" left="0" top="8" right="0" bottom="0"/>
+                <output width="1920" height="1080" left="0" top="0" right="0" bottom="0"/>
+            </ofa_2_mp>
+        </ipu6_post_gdc_video_3>
+    </settings>
+
+    <!-- ISA+LB+BB_TNR 3840x2160-->
+    <settings key="9812" id="100033" op_mode="NORMAL" active_outputs="1">
+        <video0 width="3840" height="2160" stream_id="60001"/>
+        <sensor mode_id="3840x2160" analogue_gain="0" exposure="100" vflip="0" hflip="0">
+            <port_0 type="port" width="3840" height="2160" format="YUY2"/>
+        </sensor>
+        <csi_be_soc>
+            <output width="3840" height="2160" format="IYUV"/>
+        </csi_be_soc>
+        <ipu6_post_gdc_video_3 stream_id="60001">
+            <main width="3840" height="2160" format="NV12" peer="video0"/>
+            <display enabled="0"/>
+            <postproc enabled="0"/>
+            <gdc5>
+                <input width="3840" height="2160" left="0" top="0" right="0" bottom="0"/>
+                <output width="3840" height="2160" left="0" top="-28" right="0" bottom="-20"/>
+            </gdc5>
+            <tnr_6_0>
+                <input width="3840" height="2208" left="0" top="28" right="0" bottom="4"/>
+                <output width="3840" height="2176" left="0" top="0" right="0" bottom="0"/>
+            </tnr_6_0>
+            <ofa_2_mp>
+                <input width="3840" height="2176" left="0" top="8" right="0" bottom="8"/>
+                <output width="3840" height="2160" left="0" top="0" right="0" bottom="0"/>
+            </ofa_2_mp>
+        </ipu6_post_gdc_video_3>
+    </settings>
+
+    <!-- ISA+LB+BB_TNR 2816x1600-->
+    <settings key="9813" id="100033" op_mode="NORMAL" active_outputs="1">
+        <video0 width="2816" height="1600" stream_id="60001"/>
+        <sensor mode_id="2816x1600" analogue_gain="0" exposure="100" vflip="0" hflip="0">
+            <port_0 type="port" width="2816" height="1600" format="YUY2"/>
+        </sensor>
+        <csi_be_soc>
+            <output width="2816" height="1600" format="IYUV"/>
+        </csi_be_soc>
+        <ipu6_post_gdc_video_3 stream_id="60001">
+            <main width="2816" height="1600" format="NV12" peer="video0"/>
+            <display enabled="0"/>
+            <postproc enabled="0"/>
+            <gdc5>
+                <input width="2816" height="1600" left="0" top="0" right="0" bottom="0"/>
+                <output width="2816" height="1600" left="0" top="-28" right="0" bottom="-4"/>
+            </gdc5>
+            <tnr_6_0>
+                <input width="2816" height="1632" left="0" top="28" right="0" bottom="4"/>
+                <output width="2816" height="1600" left="0" top="0" right="0" bottom="0"/>
+            </tnr_6_0>
+            <ofa_2_mp>
+                <input width="2816" height="1600" left="0" top="0" right="0" bottom="0"/>
+                <output width="2816" height="1600" left="0" top="0" right="0" bottom="0"/>
+            </ofa_2_mp>
+        </ipu6_post_gdc_video_3>
+    </settings>
+
+    <!-- ISA+LB+BB_TNR 640x480-->
+    <settings key="9814" id="100033" op_mode="NORMAL" active_outputs="1">
+        <video0 width="640" height="480" stream_id="60001"/>
+        <sensor mode_id="640x480" analogue_gain="0" exposure="100" vflip="0" hflip="0">
+            <port_0 type="port" width="640" height="480" format="YUY2"/>
+        </sensor>
+        <csi_be_soc>
+            <output width="640" height="480" format="IYUV"/>
+        </csi_be_soc>
+        <ipu6_post_gdc_video_3 stream_id="60001">
+            <main width="640" height="480" format="NV12" peer="video0"/>
+            <display enabled="0"/>
+            <postproc enabled="0"/>
+            <gdc5>
+                <input width="640" height="480" left="0" top="0" right="0" bottom="0"/>
+                <output width="640" height="480" left="0" top="-28" right="0" bottom="-4"/>
+            </gdc5>
+            <tnr_6_0>
+                <input width="640" height="512" left="0" top="28" right="0" bottom="4"/>
+                <output width="640" height="480" left="0" top="0" right="0" bottom="0"/>
+            </tnr_6_0>
+            <ofa_2_mp>
+                <input width="640" height="480" left="0" top="0" right="0" bottom="0"/>
+                <output width="640" height="480" left="0" top="0" right="0" bottom="0"/>
+            </ofa_2_mp>
+        </ipu6_post_gdc_video_3>
+    </settings>
+
+    <!-- ISA+LB+BB_TNR 1280x720-->
+    <settings key="9815" id="100033" op_mode="NORMAL" active_outputs="1">
+        <video0 width="1280" height="720" stream_id="60001"/>
+        <sensor mode_id="1280x720" analogue_gain="0" exposure="100" vflip="0" hflip="0">
+            <port_0 type="port" width="1280" height="720" format="YUY2"/>
+        </sensor>
+        <csi_be_soc>
+            <output width="1280" height="720" format="IYUV"/>
+        </csi_be_soc>
+        <ipu6_post_gdc_video_3 stream_id="60001">
+            <main width="1280" height="720" format="NV12" peer="video0"/>
+            <display enabled="0"/>
+            <postproc enabled="0"/>
+            <gdc5>
+                <input width="1280" height="720" left="0" top="0" right="0" bottom="0"/>
+                <output width="1280" height="720" left="0" top="-28" right="0" bottom="-20"/>
+            </gdc5>
+            <tnr_6_0>
+                <input width="1280" height="768" left="0" top="28" right="0" bottom="4"/>
+                <output width="1280" height="736" left="0" top="0" right="0" bottom="0"/>
+            </tnr_6_0>
+            <ofa_2_mp>
+                <input width="1280" height="736" left="0" top="8" right="0" bottom="8"/>
+                <output width="1280" height="720" left="0" top="0" right="0" bottom="0"/>
+            </ofa_2_mp>
+        </ipu6_post_gdc_video_3>
+    </settings>
+</graph_settings>

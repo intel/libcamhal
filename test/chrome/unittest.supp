@@ -1,0 +1,27 @@
+{
+   RegisterBufferCase1
+   Memcheck:Param
+   ioctl(generic)
+   fun:ioctl
+   fun:_psys_ioctl
+   fun:ia_cipr_psys_register_buffer
+   ...
+}
+{
+   AiqMakerNoteUninitData
+   Memcheck:Param
+   write(buf)
+   obj:/lib/libc-2.23.90.so
+   fun:_IO_file_write@@GLIBC_2.2.5
+   fun:new_do_write
+   fun:_IO_file_xsputn@@GLIBC_2.2.5
+   fun:fwrite
+   fun:_ZN11RawHal_Test20processCaptureResultEPK22camera3_capture_result
+   fun:_ZN7android7camera215ResultProcessor20returnPendingBuffersEPNS1_14RequestState_tE
+   fun:_ZN7android7camera215ResultProcessor16handleBufferDoneERNS1_7MessageE
+   fun:_ZN7android7camera215ResultProcessor17messageThreadLoopEv
+   fun:_ZN7android7camera213MessageThread10threadLoopEv
+   fun:_ZN7android6Thread11_threadLoopEPv
+   fun:start_thread
+}
+

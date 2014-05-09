@@ -1,0 +1,1928 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C) 2018 Intel Corporation.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<CameraSettings>
+    <Sensor name="pixter_imx477" description="pixter as sensor.">
+        <MediaCtlConfig id="0" ConfigMode="AUTO" outputWidth="2048" outputHeight="1536" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2048" height="1536"/>
+            <format name="Intel IPU6 CSI2 BE" pad="0" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE" pad="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="1" sinkName="Intel IPU6 CSI2 BE" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE" srcPad="1" sinkName="Intel IPU6 CSI2 BE capture" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 CSI2 BE capture" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="1" ConfigMode="AUTO" outputWidth="2848" outputHeight="2136" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2848" height="2136"/>
+            <format name="Intel IPU6 CSI2 BE" pad="0" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE" pad="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="1" sinkName="Intel IPU6 CSI2 BE" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE" srcPad="1" sinkName="Intel IPU6 CSI2 BE capture" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 CSI2 BE capture" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="2" ConfigMode="AUTO" outputWidth="4032" outputHeight="2288" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="4032" height="2288"/>
+            <format name="Intel IPU6 CSI2 BE" pad="0" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE" pad="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="1" sinkName="Intel IPU6 CSI2 BE" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE" srcPad="1" sinkName="Intel IPU6 CSI2 BE capture" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 CSI2 BE capture" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="3" ConfigMode="AUTO" outputWidth="768" outputHeight="576" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="768" height="576"/>
+            <format name="Intel IPU6 CSI2 BE" pad="0" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE" pad="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="1" sinkName="Intel IPU6 CSI2 BE" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE" srcPad="1" sinkName="Intel IPU6 CSI2 BE capture" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 CSI2 BE capture" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="4" ConfigMode="AUTO" outputWidth="1312" outputHeight="984" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="1312" height="984"/>
+            <format name="Intel IPU6 CSI2 BE" pad="0" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE" pad="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="1" sinkName="Intel IPU6 CSI2 BE" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE" srcPad="1" sinkName="Intel IPU6 CSI2 BE capture" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 CSI2 BE capture" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_NV12,1920x1080,0,0,
+                                        V4L2_PIX_FMT_NV12,2816x1600,0,0,
+                                        V4L2_PIX_FMT_NV12,3840x2160,0,0,
+                                        V4L2_PIX_FMT_NV12,640x480,0,0,
+                                        V4L2_PIX_FMT_NV12,1280x720,0,0"/>
+            <supportedFeatures value="MANUAL_EXPOSURE,
+                                      MANUAL_WHITE_BALANCE,
+                                      IMAGE_ENHANCEMENT,
+                                      NOISE_REDUCTION,
+                                      SCENE_MODE,
+                                      WEIGHT_GRID_MODE,
+                                      ISP_CONTROL"/>
+            <supportedIspControls value="wb_gains,color_correction_matrix,advanced_color_correction_matrix,bxt_csc,bxt_demosaic,sc_iefd,see,bnlm,tnr5_21,xnr_dss,gamma_tone_map"/>
+            <supportedAeExposureTimeRange value="AUTO,90,33333"/> <!--scene_mode,min_exposure_time,max_exposure_time -->
+            <supportedAeGainRange value="NORMAL,0,60"/> <!--scene_mode,min_gain,max_gain -->
+            <fpsRange value="10,30,10,60"/>
+            <evRange value="-4,4"/>
+            <evStep value="1,1"/>
+            <supportedAeMode value="ON,OFF"/>
+            <supportedVideoStabilizationModes value="OFF"/>
+            <supportedSceneMode value="NORMAL"/>
+            <supportedAntibandingMode value="AUTO,50Hz,60Hz,OFF"/>
+            <supportedAwbMode value="AUTO,INCANDESCENT,FLUORESCENT,DAYLIGHT,FULL_OVERCAST,PARTLY_OVERCAST,SUNSET,VIDEO_CONFERENCE,MANUAL_CCT_RANGE,MANUAL_WHITE_POINT,MANUAL_GAIN,MANUAL_COLOR_TRANSFORM"/>
+        </StaticMetadata>
+
+        <supportedTuningConfig value="NORMAL,VIDEO,IMX135_13P2BAD33_TGL"/>
+
+        <!-- The lard tags configuration. Every tag should be 4-characters. -->
+        <!-- <TuningMode, cmc tag, aiq tag, isp tag, others tag>  -->
+        <lardTags value="VIDEO,DFLT,DFLT,DFLT,DFLT"/>
+
+        <supportedISysSizes value="2048x1536,2848x2136,4032x2288,768x576,1312x984"/> <!-- ascending order request -->
+        <supportedISysFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <enableAIQ value="true"/>
+        <iSysRawFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <pSysFormat value="V4L2_PIX_FMT_NV12"/>
+        <initialSkipFrame value="0"/>
+        <exposureLag value="2"/>
+        <gainLag value="1"/>
+        <ltmGainLag value="1"/>
+        <hdrExposureNum value="2"/>
+        <hdrExposureType value="fix-exposure-ratio"/>
+        <yuvColorRangeMode value="full"/> <!-- there are 2 yuv color range mode, like full, reduced. -->
+        <pipeSwitchDelayFrame value="60"/>
+        <graphSettingsFile value="graph_settings_pixter_imx477.xml"/>
+        <enablePSysProcessor value="true"/>
+        <dvsType value="IMG_TRANS"/>
+    </Sensor>
+
+    <Sensor name="pixter_imx477_p2" description="pixter as sensor.">
+        <MediaCtlConfig id="0" ConfigMode="AUTO" outputWidth="2048" outputHeight="1536" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubB pixel array 0-007c" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubB scaler 0-007c" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubB scaler 0-007c" pad="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubB scaler 0-007c" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2048" height="1536"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="0" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 1" pad="0" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="16" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubB pixel array 0-007c" srcPad="0" sinkName="pixter_stubB scaler 0-007c" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubB scaler 0-007c" srcPad="1" sinkName="Intel IPU6 CSI-2 1" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 1" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="16" sinkName="Intel IPU6 BE SOC capture 0" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 0" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubB pixel array 0-007c" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubB scaler 0-007c" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 1" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="1" ConfigMode="AUTO" outputWidth="2848" outputHeight="2136" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubB pixel array 0-007c" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubB scaler 0-007c" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubB scaler 0-007c" pad="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubB scaler 0-007c" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2848" height="2136"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="0" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 1" pad="0" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="16" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubB pixel array 0-007c" srcPad="0" sinkName="pixter_stubB scaler 0-007c" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubB scaler 0-007c" srcPad="1" sinkName="Intel IPU6 CSI-2 1" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 1" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="16" sinkName="Intel IPU6 BE SOC capture 0" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 0" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubB pixel array 0-007c" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubB scaler 0-007c" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 1" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="2" ConfigMode="AUTO" outputWidth="4032" outputHeight="2288" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubB pixel array 0-007c" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubB scaler 0-007c" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubB scaler 0-007c" pad="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubB scaler 0-007c" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="4032" height="2288"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="0" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 1" pad="0" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="16" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubB pixel array 0-007c" srcPad="0" sinkName="pixter_stubB scaler 0-007c" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubB scaler 0-007c" srcPad="1" sinkName="Intel IPU6 CSI-2 1" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 1" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="16" sinkName="Intel IPU6 BE SOC capture 0" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 0" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubB pixel array 0-007c" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubB scaler 0-007c" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 1" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="3" ConfigMode="AUTO" outputWidth="768" outputHeight="576" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubB pixel array 0-007c" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubB scaler 0-007c" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubB scaler 0-007c" pad="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubB scaler 0-007c" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="768" height="576"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="0" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 1" pad="0" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="16" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubB pixel array 0-007c" srcPad="0" sinkName="pixter_stubB scaler 0-007c" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubB scaler 0-007c" srcPad="1" sinkName="Intel IPU6 CSI-2 1" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 1" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="16" sinkName="Intel IPU6 BE SOC capture 0" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 0" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubB pixel array 0-007c" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubB scaler 0-007c" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 1" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="4" ConfigMode="AUTO" outputWidth="1312" outputHeight="984" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubB pixel array 0-007c" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubB scaler 0-007c" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubB scaler 0-007c" pad="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubB scaler 0-007c" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="1312" height="984"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="0" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 1" pad="0" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="16" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubB pixel array 0-007c" srcPad="0" sinkName="pixter_stubB scaler 0-007c" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubB scaler 0-007c" srcPad="1" sinkName="Intel IPU6 CSI-2 1" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 1" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="16" sinkName="Intel IPU6 BE SOC capture 0" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 0" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubB pixel array 0-007c" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubB scaler 0-007c" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 1" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_NV12,1920x1080,0,0,
+                                        V4L2_PIX_FMT_NV12,2816x1600,0,0,
+                                        V4L2_PIX_FMT_NV12,3840x2160,0,0,
+                                        V4L2_PIX_FMT_NV12,640x480,0,0,
+                                        V4L2_PIX_FMT_NV12,1280x720,0,0"/>
+            <supportedFeatures value="MANUAL_EXPOSURE,
+                                      MANUAL_WHITE_BALANCE,
+                                      IMAGE_ENHANCEMENT,
+                                      NOISE_REDUCTION,
+                                      SCENE_MODE,
+                                      WEIGHT_GRID_MODE,
+                                      ISP_CONTROL"/>
+            <supportedIspControls value="wb_gains,color_correction_matrix,advanced_color_correction_matrix,bxt_csc,bxt_demosaic,sc_iefd,see,bnlm,tnr5_21,xnr_dss,gamma_tone_map"/>
+            <supportedAeExposureTimeRange value="AUTO,90,33333"/> <!--scene_mode,min_exposure_time,max_exposure_time -->
+            <supportedAeGainRange value="NORMAL,0,60"/> <!--scene_mode,min_gain,max_gain -->
+            <fpsRange value="10,30,10,60"/>
+            <evRange value="-4,4"/>
+            <evStep value="1,1"/>
+            <supportedAeMode value="ON,OFF"/>
+            <supportedVideoStabilizationModes value="OFF"/>
+            <supportedSceneMode value="NORMAL"/>
+            <supportedAntibandingMode value="AUTO,50Hz,60Hz,OFF"/>
+            <supportedAwbMode value="AUTO,INCANDESCENT,FLUORESCENT,DAYLIGHT,FULL_OVERCAST,PARTLY_OVERCAST,SUNSET,VIDEO_CONFERENCE,MANUAL_CCT_RANGE,MANUAL_WHITE_POINT,MANUAL_GAIN,MANUAL_COLOR_TRANSFORM"/>
+        </StaticMetadata>
+
+        <supportedTuningConfig value="NORMAL,VIDEO,IMX135_13P2BAD33_TGL"/>
+
+        <supportedISysSizes value="2048x1536,2848x2136,4032x2288,768x576,1312x984"/> <!-- ascending order request -->
+        <supportedISysFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <enableAIQ value="true"/>
+        <iSysRawFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <pSysFormat value="V4L2_PIX_FMT_NV12"/>
+        <initialSkipFrame value="0"/>
+        <exposureLag value="2"/>
+        <gainLag value="1"/>
+        <ltmGainLag value="1"/>
+        <hdrExposureNum value="2"/>
+        <hdrExposureType value="fix-exposure-ratio"/>
+        <yuvColorRangeMode value="full"/> <!-- there are 2 yuv color range mode, like full, reduced. -->
+        <pipeSwitchDelayFrame value="60"/>
+        <graphSettingsFile value="graph_settings_pixter_imx477_be_soc.xml"/>
+        <enablePSysProcessor value="true"/>
+        <dvsType value="IMG_TRANS"/>
+    </Sensor>
+
+    <Sensor name="pixter_imx477_p3" description="pixter as sensor.">
+        <MediaCtlConfig id="0" ConfigMode="AUTO" outputWidth="2048" outputHeight="1536" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubC pixel array 0-007b" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubC scaler 0-007b" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubC scaler 0-007b" pad="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubC scaler 0-007b" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2048" height="1536"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 2" pad="0" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="17" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubC pixel array 0-007b" srcPad="0" sinkName="pixter_stubC scaler 0-007b" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubC scaler 0-007b" srcPad="1" sinkName="Intel IPU6 CSI-2 2" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 2" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="1" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="17" sinkName="Intel IPU6 BE SOC capture 1" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 1" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubC pixel array 0-007b" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubC scaler 0-007b" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 2" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="1" ConfigMode="AUTO" outputWidth="2848" outputHeight="2136" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubC pixel array 0-007b" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubC scaler 0-007b" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubC scaler 0-007b" pad="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubC scaler 0-007b" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2848" height="2136"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 2" pad="0" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="17" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubC pixel array 0-007b" srcPad="0" sinkName="pixter_stubC scaler 0-007b" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubC scaler 0-007b" srcPad="1" sinkName="Intel IPU6 CSI-2 2" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 2" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="1" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="17" sinkName="Intel IPU6 BE SOC capture 1" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 1" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubC pixel array 0-007b" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubC scaler 0-007b" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 2" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="2" ConfigMode="AUTO" outputWidth="4032" outputHeight="2288" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubC pixel array 0-007b" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubC scaler 0-007b" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubC scaler 0-007b" pad="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubC scaler 0-007b" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="4032" height="2288"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 2" pad="0" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="17" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubC pixel array 0-007b" srcPad="0" sinkName="pixter_stubC scaler 0-007b" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubC scaler 0-007b" srcPad="1" sinkName="Intel IPU6 CSI-2 2" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 2" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="1" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="17" sinkName="Intel IPU6 BE SOC capture 1" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 1" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubC pixel array 0-007b" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubC scaler 0-007b" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 2" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="3" ConfigMode="AUTO" outputWidth="768" outputHeight="576" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubC pixel array 0-007b" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubC scaler 0-007b" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubC scaler 0-007b" pad="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubC scaler 0-007b" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="768" height="576"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 2" pad="0" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="17" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubC pixel array 0-007b" srcPad="0" sinkName="pixter_stubC scaler 0-007b" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubC scaler 0-007b" srcPad="1" sinkName="Intel IPU6 CSI-2 2" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 2" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="1" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="17" sinkName="Intel IPU6 BE SOC capture 1" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 1" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubC pixel array 0-007b" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubC scaler 0-007b" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 2" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="4" ConfigMode="AUTO" outputWidth="1312" outputHeight="984" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubC pixel array 0-007b" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubC scaler 0-007b" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubC scaler 0-007b" pad="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubC scaler 0-007b" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="1312" height="984"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 2" pad="0" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="17" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubC pixel array 0-007b" srcPad="0" sinkName="pixter_stubC scaler 0-007b" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubC scaler 0-007b" srcPad="1" sinkName="Intel IPU6 CSI-2 2" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 2" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="1" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="17" sinkName="Intel IPU6 BE SOC capture 1" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 1" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubC pixel array 0-007b" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubC scaler 0-007b" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 2" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_NV12,1920x1080,0,0,
+                                        V4L2_PIX_FMT_NV12,2816x1600,0,0,
+                                        V4L2_PIX_FMT_NV12,3840x2160,0,0,
+                                        V4L2_PIX_FMT_NV12,640x480,0,0,
+                                        V4L2_PIX_FMT_NV12,1280x720,0,0"/>
+            <supportedFeatures value="MANUAL_EXPOSURE,
+                                      MANUAL_WHITE_BALANCE,
+                                      IMAGE_ENHANCEMENT,
+                                      NOISE_REDUCTION,
+                                      SCENE_MODE,
+                                      WEIGHT_GRID_MODE,
+                                      ISP_CONTROL"/>
+            <supportedIspControls value="wb_gains,color_correction_matrix,advanced_color_correction_matrix,bxt_csc,bxt_demosaic,sc_iefd,see,bnlm,tnr5_21,xnr_dss,gamma_tone_map"/>
+            <supportedAeExposureTimeRange value="AUTO,90,33333"/> <!--scene_mode,min_exposure_time,max_exposure_time -->
+            <supportedAeGainRange value="NORMAL,0,60"/> <!--scene_mode,min_gain,max_gain -->
+            <fpsRange value="10,30,10,60"/>
+            <evRange value="-4,4"/>
+            <evStep value="1,1"/>
+            <supportedAeMode value="ON,OFF"/>
+            <supportedVideoStabilizationModes value="OFF"/>
+            <supportedSceneMode value="NORMAL"/>
+            <supportedAntibandingMode value="AUTO,50Hz,60Hz,OFF"/>
+            <supportedAwbMode value="AUTO,INCANDESCENT,FLUORESCENT,DAYLIGHT,FULL_OVERCAST,PARTLY_OVERCAST,SUNSET,VIDEO_CONFERENCE,MANUAL_CCT_RANGE,MANUAL_WHITE_POINT,MANUAL_GAIN,MANUAL_COLOR_TRANSFORM"/>
+        </StaticMetadata>
+
+        <supportedTuningConfig value="NORMAL,VIDEO,IMX135_13P2BAD33_TGL"/>
+
+        <supportedISysSizes value="2048x1536,2848x2136,4032x2288,768x576,1312x984"/> <!-- ascending order request -->
+        <supportedISysFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <enableAIQ value="true"/>
+        <iSysRawFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <pSysFormat value="V4L2_PIX_FMT_NV12"/>
+        <initialSkipFrame value="0"/>
+        <exposureLag value="2"/>
+        <gainLag value="1"/>
+        <ltmGainLag value="1"/>
+        <hdrExposureNum value="2"/>
+        <hdrExposureType value="fix-exposure-ratio"/>
+        <yuvColorRangeMode value="full"/> <!-- there are 2 yuv color range mode, like full, reduced. -->
+        <pipeSwitchDelayFrame value="60"/>
+        <graphSettingsFile value="graph_settings_pixter_imx477_be_soc.xml"/>
+        <enablePSysProcessor value="true"/>
+        <dvsType value="IMG_TRANS"/>
+    </Sensor>
+
+    <Sensor name="pixter_imx477_p4" description="pixter as sensor.">
+        <MediaCtlConfig id="0" ConfigMode="AUTO" outputWidth="2048" outputHeight="1536" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubD pixel array 0-007a" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubD scaler 0-007a" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubD scaler 0-007a" pad="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubD scaler 0-007a" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2048" height="1536"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="2" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 3" pad="0" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="18" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubD pixel array 0-007a" srcPad="0" sinkName="pixter_stubD scaler 0-007a" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubD scaler 0-007a" srcPad="1" sinkName="Intel IPU6 CSI-2 3" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 3" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="2" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="18" sinkName="Intel IPU6 BE SOC capture 2" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 2" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubD pixel array 0-007a" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubD scaler 0-007a" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 3" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="1" ConfigMode="AUTO" outputWidth="2848" outputHeight="2136" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubD pixel array 0-007a" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubD scaler 0-007a" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubD scaler 0-007a" pad="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubD scaler 0-007a" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2848" height="2136"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="2" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 3" pad="0" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="18" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubD pixel array 0-007a" srcPad="0" sinkName="pixter_stubD scaler 0-007a" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubD scaler 0-007a" srcPad="1" sinkName="Intel IPU6 CSI-2 3" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 3" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="2" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="18" sinkName="Intel IPU6 BE SOC capture 2" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 2" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubD pixel array 0-007a" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubD scaler 0-007a" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 3" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="2" ConfigMode="AUTO" outputWidth="4032" outputHeight="2288" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubD pixel array 0-007a" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubD scaler 0-007a" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubD scaler 0-007a" pad="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubD scaler 0-007a" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="4032" height="2288"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="2" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 3" pad="0" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="18" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubD pixel array 0-007a" srcPad="0" sinkName="pixter_stubD scaler 0-007a" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubD scaler 0-007a" srcPad="1" sinkName="Intel IPU6 CSI-2 3" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 3" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="2" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="18" sinkName="Intel IPU6 BE SOC capture 2" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 2" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubD pixel array 0-007a" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubD scaler 0-007a" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 3" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="3" ConfigMode="AUTO" outputWidth="768" outputHeight="576" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubD pixel array 0-007a" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubD scaler 0-007a" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubD scaler 0-007a" pad="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubD scaler 0-007a" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="768" height="576"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="2" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 3" pad="0" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="18" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubD pixel array 0-007a" srcPad="0" sinkName="pixter_stubD scaler 0-007a" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubD scaler 0-007a" srcPad="1" sinkName="Intel IPU6 CSI-2 3" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 3" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="2" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="18" sinkName="Intel IPU6 BE SOC capture 2" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 2" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubD pixel array 0-007a" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubD scaler 0-007a" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 3" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="4" ConfigMode="AUTO" outputWidth="1312" outputHeight="984" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubD pixel array 0-007a" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubD scaler 0-007a" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubD scaler 0-007a" pad="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubD scaler 0-007a" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="1312" height="984"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="2" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 3" pad="0" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="18" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubD pixel array 0-007a" srcPad="0" sinkName="pixter_stubD scaler 0-007a" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubD scaler 0-007a" srcPad="1" sinkName="Intel IPU6 CSI-2 3" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 3" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="2" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="18" sinkName="Intel IPU6 BE SOC capture 2" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 2" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubD pixel array 0-007a" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubD scaler 0-007a" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 3" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_NV12,1920x1080,0,0,
+                                        V4L2_PIX_FMT_NV12,2816x1600,0,0,
+                                        V4L2_PIX_FMT_NV12,3840x2160,0,0,
+                                        V4L2_PIX_FMT_NV12,640x480,0,0,
+                                        V4L2_PIX_FMT_NV12,1280x720,0,0"/>
+            <supportedFeatures value="MANUAL_EXPOSURE,
+                                      MANUAL_WHITE_BALANCE,
+                                      IMAGE_ENHANCEMENT,
+                                      NOISE_REDUCTION,
+                                      SCENE_MODE,
+                                      WEIGHT_GRID_MODE,
+                                      ISP_CONTROL"/>
+            <supportedIspControls value="wb_gains,color_correction_matrix,advanced_color_correction_matrix,bxt_csc,bxt_demosaic,sc_iefd,see,bnlm,tnr5_21,xnr_dss,gamma_tone_map"/>
+            <supportedAeExposureTimeRange value="AUTO,90,33333"/> <!--scene_mode,min_exposure_time,max_exposure_time -->
+            <supportedAeGainRange value="NORMAL,0,60"/> <!--scene_mode,min_gain,max_gain -->
+            <fpsRange value="10,30,10,60"/>
+            <evRange value="-4,4"/>
+            <evStep value="1,1"/>
+            <supportedAeMode value="ON,OFF"/>
+            <supportedVideoStabilizationModes value="OFF"/>
+            <supportedSceneMode value="NORMAL"/>
+            <supportedAntibandingMode value="AUTO,50Hz,60Hz,OFF"/>
+            <supportedAwbMode value="AUTO,INCANDESCENT,FLUORESCENT,DAYLIGHT,FULL_OVERCAST,PARTLY_OVERCAST,SUNSET,VIDEO_CONFERENCE,MANUAL_CCT_RANGE,MANUAL_WHITE_POINT,MANUAL_GAIN,MANUAL_COLOR_TRANSFORM"/>
+        </StaticMetadata>
+
+        <supportedTuningConfig value="NORMAL,VIDEO,IMX135_13P2BAD33_TGL"/>
+
+        <supportedISysSizes value="2048x1536,2848x2136,4032x2288,768x576,1312x984"/> <!-- ascending order request -->
+        <supportedISysFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <enableAIQ value="true"/>
+        <iSysRawFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <pSysFormat value="V4L2_PIX_FMT_NV12"/>
+        <initialSkipFrame value="0"/>
+        <exposureLag value="2"/>
+        <gainLag value="1"/>
+        <ltmGainLag value="1"/>
+        <hdrExposureNum value="2"/>
+        <hdrExposureType value="fix-exposure-ratio"/>
+        <yuvColorRangeMode value="full"/> <!-- there are 2 yuv color range mode, like full, reduced. -->
+        <pipeSwitchDelayFrame value="60"/>
+        <graphSettingsFile value="graph_settings_pixter_imx477_be_soc.xml"/>
+        <enablePSysProcessor value="true"/>
+        <dvsType value="IMG_TRANS"/>
+    </Sensor>
+
+    <Sensor name="pixter_imx477_p5" description="pixter as sensor.">
+        <MediaCtlConfig id="0" ConfigMode="AUTO" outputWidth="2048" outputHeight="1536" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubE pixel array 0-0079" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubE scaler 0-0079" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubE scaler 0-0079" pad="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubE scaler 0-0079" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2048" height="1536"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="3" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 4" pad="0" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="19" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubE pixel array 0-0079" srcPad="0" sinkName="pixter_stubE scaler 0-0079" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubE scaler 0-0079" srcPad="1" sinkName="Intel IPU6 CSI-2 4" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 4" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="3" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="19" sinkName="Intel IPU6 BE SOC capture 3" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 3" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubE pixel array 0-0079" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubE scaler 0-0079" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 4" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="1" ConfigMode="AUTO" outputWidth="2848" outputHeight="2136" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubE pixel array 0-0079" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubE scaler 0-0079" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubE scaler 0-0079" pad="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubE scaler 0-0079" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2848" height="2136"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="3" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 4" pad="0" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="19" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubE pixel array 0-0079" srcPad="0" sinkName="pixter_stubE scaler 0-0079" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubE scaler 0-0079" srcPad="1" sinkName="Intel IPU6 CSI-2 4" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 4" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="3" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="19" sinkName="Intel IPU6 BE SOC capture 3" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 3" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubE pixel array 0-0079" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubE scaler 0-0079" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 4" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="2" ConfigMode="AUTO" outputWidth="4032" outputHeight="2288" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubE pixel array 0-0079" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubE scaler 0-0079" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubE scaler 0-0079" pad="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubE scaler 0-0079" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="4032" height="2288"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="3" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 4" pad="0" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="19" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubE pixel array 0-0079" srcPad="0" sinkName="pixter_stubE scaler 0-0079" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubE scaler 0-0079" srcPad="1" sinkName="Intel IPU6 CSI-2 4" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 4" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="3" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="19" sinkName="Intel IPU6 BE SOC capture 3" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 3" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubE pixel array 0-0079" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubE scaler 0-0079" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 4" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="3" ConfigMode="AUTO" outputWidth="768" outputHeight="576" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubE pixel array 0-0079" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubE scaler 0-0079" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubE scaler 0-0079" pad="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubE scaler 0-0079" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="768" height="576"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="3" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 4" pad="0" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="19" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubE pixel array 0-0079" srcPad="0" sinkName="pixter_stubE scaler 0-0079" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubE scaler 0-0079" srcPad="1" sinkName="Intel IPU6 CSI-2 4" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 4" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="3" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="19" sinkName="Intel IPU6 BE SOC capture 3" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 3" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubE pixel array 0-0079" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubE scaler 0-0079" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 4" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="4" ConfigMode="AUTO" outputWidth="1312" outputHeight="984" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubE pixel array 0-0079" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubE scaler 0-0079" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubE scaler 0-0079" pad="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubE scaler 0-0079" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="1312" height="984"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="3" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 4" pad="0" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="19" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubE pixel array 0-0079" srcPad="0" sinkName="pixter_stubE scaler 0-0079" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubE scaler 0-0079" srcPad="1" sinkName="Intel IPU6 CSI-2 4" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 4" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="3" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="19" sinkName="Intel IPU6 BE SOC capture 3" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 3" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubE pixel array 0-0079" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubE scaler 0-0079" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 4" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_NV12,1920x1080,0,0,
+                                        V4L2_PIX_FMT_NV12,2816x1600,0,0,
+                                        V4L2_PIX_FMT_NV12,3840x2160,0,0,
+                                        V4L2_PIX_FMT_NV12,640x480,0,0,
+                                        V4L2_PIX_FMT_NV12,1280x720,0,0"/>
+            <supportedFeatures value="MANUAL_EXPOSURE,
+                                      MANUAL_WHITE_BALANCE,
+                                      IMAGE_ENHANCEMENT,
+                                      NOISE_REDUCTION,
+                                      SCENE_MODE,
+                                      WEIGHT_GRID_MODE,
+                                      ISP_CONTROL"/>
+            <supportedIspControls value="wb_gains,color_correction_matrix,advanced_color_correction_matrix,bxt_csc,bxt_demosaic,sc_iefd,see,bnlm,tnr5_21,xnr_dss,gamma_tone_map"/>
+            <supportedAeExposureTimeRange value="AUTO,90,33333"/> <!--scene_mode,min_exposure_time,max_exposure_time -->
+            <supportedAeGainRange value="NORMAL,0,60"/> <!--scene_mode,min_gain,max_gain -->
+            <fpsRange value="10,30,10,60"/>
+            <evRange value="-4,4"/>
+            <evStep value="1,1"/>
+            <supportedAeMode value="ON,OFF"/>
+            <supportedVideoStabilizationModes value="OFF"/>
+            <supportedSceneMode value="NORMAL"/>
+            <supportedAntibandingMode value="AUTO,50Hz,60Hz,OFF"/>
+            <supportedAwbMode value="AUTO,INCANDESCENT,FLUORESCENT,DAYLIGHT,FULL_OVERCAST,PARTLY_OVERCAST,SUNSET,VIDEO_CONFERENCE,MANUAL_CCT_RANGE,MANUAL_WHITE_POINT,MANUAL_GAIN,MANUAL_COLOR_TRANSFORM"/>
+        </StaticMetadata>
+
+        <supportedTuningConfig value="NORMAL,VIDEO,IMX135_13P2BAD33_TGL"/>
+
+        <supportedISysSizes value="2048x1536,2848x2136,4032x2288,768x576,1312x984"/> <!-- ascending order request -->
+        <supportedISysFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <enableAIQ value="true"/>
+        <iSysRawFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <pSysFormat value="V4L2_PIX_FMT_NV12"/>
+        <initialSkipFrame value="0"/>
+        <exposureLag value="2"/>
+        <gainLag value="1"/>
+        <ltmGainLag value="1"/>
+        <hdrExposureNum value="2"/>
+        <hdrExposureType value="fix-exposure-ratio"/>
+        <yuvColorRangeMode value="full"/> <!-- there are 2 yuv color range mode, like full, reduced. -->
+        <pipeSwitchDelayFrame value="60"/>
+        <graphSettingsFile value="graph_settings_pixter_imx477_be_soc.xml"/>
+        <enablePSysProcessor value="true"/>
+        <dvsType value="IMG_TRANS"/>
+    </Sensor>
+
+    <Sensor name="pixter_imx477_p6" description="pixter as sensor.">
+        <MediaCtlConfig id="0" ConfigMode="AUTO" outputWidth="2048" outputHeight="1536" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubF pixel array 0-0078" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubF scaler 0-0078" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubF scaler 0-0078" pad="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubF scaler 0-0078" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2048" height="1536"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="4" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 5" pad="0" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="20" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubF pixel array 0-0078" srcPad="0" sinkName="pixter_stubF scaler 0-0078" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubF scaler 0-0078" srcPad="1" sinkName="Intel IPU6 CSI-2 5" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 5" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="4" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="20" sinkName="Intel IPU6 BE SOC capture 4" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 4" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubF pixel array 0-0078" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubF scaler 0-0078" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 5" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="1" ConfigMode="AUTO" outputWidth="2848" outputHeight="2136" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubF pixel array 0-0078" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubF scaler 0-0078" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubF scaler 0-0078" pad="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubF scaler 0-0078" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2848" height="2136"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="4" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 5" pad="0" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="20" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubF pixel array 0-0078" srcPad="0" sinkName="pixter_stubF scaler 0-0078" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubF scaler 0-0078" srcPad="1" sinkName="Intel IPU6 CSI-2 5" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 5" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="4" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="20" sinkName="Intel IPU6 BE SOC capture 4" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 4" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubF pixel array 0-0078" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubF scaler 0-0078" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 5" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="2" ConfigMode="AUTO" outputWidth="4032" outputHeight="2288" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubF pixel array 0-0078" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubF scaler 0-0078" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubF scaler 0-0078" pad="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubF scaler 0-0078" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="4032" height="2288"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="4" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 5" pad="0" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="20" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubF pixel array 0-0078" srcPad="0" sinkName="pixter_stubF scaler 0-0078" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubF scaler 0-0078" srcPad="1" sinkName="Intel IPU6 CSI-2 5" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 5" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="4" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="20" sinkName="Intel IPU6 BE SOC capture 4" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 4" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubF pixel array 0-0078" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubF scaler 0-0078" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 5" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="3" ConfigMode="AUTO" outputWidth="768" outputHeight="576" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubF pixel array 0-0078" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubF scaler 0-0078" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubF scaler 0-0078" pad="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubF scaler 0-0078" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="768" height="576"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="4" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 5" pad="0" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="20" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubF pixel array 0-0078" srcPad="0" sinkName="pixter_stubF scaler 0-0078" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubF scaler 0-0078" srcPad="1" sinkName="Intel IPU6 CSI-2 5" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 5" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="4" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="20" sinkName="Intel IPU6 BE SOC capture 4" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 4" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubF pixel array 0-0078" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubF scaler 0-0078" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 5" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="4" ConfigMode="AUTO" outputWidth="1312" outputHeight="984" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubF pixel array 0-0078" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubF scaler 0-0078" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubF scaler 0-0078" pad="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubF scaler 0-0078" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="1312" height="984"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="4" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 5" pad="0" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="20" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubF pixel array 0-0078" srcPad="0" sinkName="pixter_stubF scaler 0-0078" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubF scaler 0-0078" srcPad="1" sinkName="Intel IPU6 CSI-2 5" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 5" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="4" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="20" sinkName="Intel IPU6 BE SOC capture 4" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 4" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubF pixel array 0-0078" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubF scaler 0-0078" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 5" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_NV12,1920x1080,0,0,
+                                        V4L2_PIX_FMT_NV12,2816x1600,0,0,
+                                        V4L2_PIX_FMT_NV12,3840x2160,0,0,
+                                        V4L2_PIX_FMT_NV12,640x480,0,0,
+                                        V4L2_PIX_FMT_NV12,1280x720,0,0"/>
+            <supportedFeatures value="MANUAL_EXPOSURE,
+                                      MANUAL_WHITE_BALANCE,
+                                      IMAGE_ENHANCEMENT,
+                                      NOISE_REDUCTION,
+                                      SCENE_MODE,
+                                      WEIGHT_GRID_MODE,
+                                      ISP_CONTROL"/>
+            <supportedIspControls value="wb_gains,color_correction_matrix,advanced_color_correction_matrix,bxt_csc,bxt_demosaic,sc_iefd,see,bnlm,tnr5_21,xnr_dss,gamma_tone_map"/>
+            <supportedAeExposureTimeRange value="AUTO,90,33333"/> <!--scene_mode,min_exposure_time,max_exposure_time -->
+            <supportedAeGainRange value="NORMAL,0,60"/> <!--scene_mode,min_gain,max_gain -->
+            <fpsRange value="10,30,10,60"/>
+            <evRange value="-4,4"/>
+            <evStep value="1,1"/>
+            <supportedAeMode value="ON,OFF"/>
+            <supportedVideoStabilizationModes value="OFF"/>
+            <supportedSceneMode value="NORMAL"/>
+            <supportedAntibandingMode value="AUTO,50Hz,60Hz,OFF"/>
+            <supportedAwbMode value="AUTO,INCANDESCENT,FLUORESCENT,DAYLIGHT,FULL_OVERCAST,PARTLY_OVERCAST,SUNSET,VIDEO_CONFERENCE,MANUAL_CCT_RANGE,MANUAL_WHITE_POINT,MANUAL_GAIN,MANUAL_COLOR_TRANSFORM"/>
+        </StaticMetadata>
+
+        <supportedTuningConfig value="NORMAL,VIDEO,IMX135_13P2BAD33_TGL"/>
+
+        <supportedISysSizes value="2048x1536,2848x2136,4032x2288,768x576,1312x984"/> <!-- ascending order request -->
+        <supportedISysFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <enableAIQ value="true"/>
+        <iSysRawFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <pSysFormat value="V4L2_PIX_FMT_NV12"/>
+        <initialSkipFrame value="0"/>
+        <exposureLag value="2"/>
+        <gainLag value="1"/>
+        <ltmGainLag value="1"/>
+        <hdrExposureNum value="2"/>
+        <hdrExposureType value="fix-exposure-ratio"/>
+        <yuvColorRangeMode value="full"/> <!-- there are 2 yuv color range mode, like full, reduced. -->
+        <pipeSwitchDelayFrame value="60"/>
+        <graphSettingsFile value="graph_settings_pixter_imx477_be_soc.xml"/>
+        <enablePSysProcessor value="true"/>
+        <dvsType value="IMG_TRANS"/>
+    </Sensor>
+
+    <Sensor name="pixter_imx477_p7" description="pixter as sensor.">
+        <MediaCtlConfig id="0" ConfigMode="AUTO" outputWidth="2048" outputHeight="1536" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubG pixel array 0-0077" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubG scaler 0-0077" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubG scaler 0-0077" pad="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubG scaler 0-0077" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2048" height="1536"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="5" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 6" pad="0" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="21" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubG pixel array 0-0077" srcPad="0" sinkName="pixter_stubG scaler 0-0077" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubG scaler 0-0077" srcPad="1" sinkName="Intel IPU6 CSI-2 6" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 6" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="5" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="21" sinkName="Intel IPU6 BE SOC capture 5" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 5" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubG pixel array 0-0077" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubG scaler 0-0077" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 6" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="1" ConfigMode="AUTO" outputWidth="2848" outputHeight="2136" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubG pixel array 0-0077" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubG scaler 0-0077" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubG scaler 0-0077" pad="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubG scaler 0-0077" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2848" height="2136"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="5" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 6" pad="0" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="21" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubG pixel array 0-0077" srcPad="0" sinkName="pixter_stubG scaler 0-0077" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubG scaler 0-0077" srcPad="1" sinkName="Intel IPU6 CSI-2 6" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 6" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="5" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="21" sinkName="Intel IPU6 BE SOC capture 5" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 5" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubG pixel array 0-0077" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubG scaler 0-0077" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 6" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="2" ConfigMode="AUTO" outputWidth="4032" outputHeight="2288" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubG pixel array 0-0077" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubG scaler 0-0077" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubG scaler 0-0077" pad="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubG scaler 0-0077" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="4032" height="2288"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="5" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 6" pad="0" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="21" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubG pixel array 0-0077" srcPad="0" sinkName="pixter_stubG scaler 0-0077" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubG scaler 0-0077" srcPad="1" sinkName="Intel IPU6 CSI-2 6" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 6" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="5" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="21" sinkName="Intel IPU6 BE SOC capture 5" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 5" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubG pixel array 0-0077" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubG scaler 0-0077" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 6" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="3" ConfigMode="AUTO" outputWidth="768" outputHeight="576" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubG pixel array 0-0077" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubG scaler 0-0077" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubG scaler 0-0077" pad="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubG scaler 0-0077" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="768" height="576"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="5" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 6" pad="0" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="21" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubG pixel array 0-0077" srcPad="0" sinkName="pixter_stubG scaler 0-0077" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubG scaler 0-0077" srcPad="1" sinkName="Intel IPU6 CSI-2 6" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 6" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="5" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="21" sinkName="Intel IPU6 BE SOC capture 5" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 5" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubG pixel array 0-0077" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubG scaler 0-0077" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 6" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="4" ConfigMode="AUTO" outputWidth="1312" outputHeight="984" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubG pixel array 0-0077" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubG scaler 0-0077" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubG scaler 0-0077" pad="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubG scaler 0-0077" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="1312" height="984"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="5" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 6" pad="0" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="21" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubG pixel array 0-0077" srcPad="0" sinkName="pixter_stubG scaler 0-0077" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubG scaler 0-0077" srcPad="1" sinkName="Intel IPU6 CSI-2 6" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 6" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="5" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="21" sinkName="Intel IPU6 BE SOC capture 5" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 5" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubG pixel array 0-0077" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubG scaler 0-0077" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 6" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_NV12,1920x1080,0,0,
+                                        V4L2_PIX_FMT_NV12,2816x1600,0,0,
+                                        V4L2_PIX_FMT_NV12,3840x2160,0,0,
+                                        V4L2_PIX_FMT_NV12,640x480,0,0,
+                                        V4L2_PIX_FMT_NV12,1280x720,0,0"/>
+            <supportedFeatures value="MANUAL_EXPOSURE,
+                                      MANUAL_WHITE_BALANCE,
+                                      IMAGE_ENHANCEMENT,
+                                      NOISE_REDUCTION,
+                                      SCENE_MODE,
+                                      WEIGHT_GRID_MODE,
+                                      ISP_CONTROL"/>
+            <supportedIspControls value="wb_gains,color_correction_matrix,advanced_color_correction_matrix,bxt_csc,bxt_demosaic,sc_iefd,see,bnlm,tnr5_21,xnr_dss,gamma_tone_map"/>
+            <supportedAeExposureTimeRange value="AUTO,90,33333"/> <!--scene_mode,min_exposure_time,max_exposure_time -->
+            <supportedAeGainRange value="NORMAL,0,60"/> <!--scene_mode,min_gain,max_gain -->
+            <fpsRange value="10,30,10,60"/>
+            <evRange value="-4,4"/>
+            <evStep value="1,1"/>
+            <supportedAeMode value="ON,OFF"/>
+            <supportedVideoStabilizationModes value="OFF"/>
+            <supportedSceneMode value="NORMAL"/>
+            <supportedAntibandingMode value="AUTO,50Hz,60Hz,OFF"/>
+            <supportedAwbMode value="AUTO,INCANDESCENT,FLUORESCENT,DAYLIGHT,FULL_OVERCAST,PARTLY_OVERCAST,SUNSET,VIDEO_CONFERENCE,MANUAL_CCT_RANGE,MANUAL_WHITE_POINT,MANUAL_GAIN,MANUAL_COLOR_TRANSFORM"/>
+        </StaticMetadata>
+
+        <supportedTuningConfig value="NORMAL,VIDEO,IMX135_13P2BAD33_TGL"/>
+
+        <supportedISysSizes value="2048x1536,2848x2136,4032x2288,768x576,1312x984"/> <!-- ascending order request -->
+        <supportedISysFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <enableAIQ value="true"/>
+        <iSysRawFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <pSysFormat value="V4L2_PIX_FMT_NV12"/>
+        <initialSkipFrame value="0"/>
+        <exposureLag value="2"/>
+        <gainLag value="1"/>
+        <ltmGainLag value="1"/>
+        <hdrExposureNum value="2"/>
+        <hdrExposureType value="fix-exposure-ratio"/>
+        <yuvColorRangeMode value="full"/> <!-- there are 2 yuv color range mode, like full, reduced. -->
+        <pipeSwitchDelayFrame value="60"/>
+        <graphSettingsFile value="graph_settings_pixter_imx477_be_soc.xml"/>
+        <enablePSysProcessor value="true"/>
+        <dvsType value="IMG_TRANS"/>
+    </Sensor>
+
+    <Sensor name="pixter_imx477_p8" description="pixter as sensor.">
+        <MediaCtlConfig id="0" ConfigMode="AUTO" outputWidth="2048" outputHeight="1536" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubH pixel array 0-0076" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubH scaler 0-0076" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubH scaler 0-0076" pad="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubH scaler 0-0076" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2048" height="1536"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="6" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 7" pad="0" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="22" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubH pixel array 0-0076" srcPad="0" sinkName="pixter_stubH scaler 0-0076" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubH scaler 0-0076" srcPad="1" sinkName="Intel IPU6 CSI-2 7" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 7" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="6" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="22" sinkName="Intel IPU6 BE SOC capture 6" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 6" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubH pixel array 0-0076" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubH scaler 0-0076" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 7" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="1" ConfigMode="AUTO" outputWidth="2848" outputHeight="2136" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubH pixel array 0-0076" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubH scaler 0-0076" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubH scaler 0-0076" pad="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubH scaler 0-0076" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2848" height="2136"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="6" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 7" pad="0" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="22" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubH pixel array 0-0076" srcPad="0" sinkName="pixter_stubH scaler 0-0076" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubH scaler 0-0076" srcPad="1" sinkName="Intel IPU6 CSI-2 7" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 7" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="6" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="22" sinkName="Intel IPU6 BE SOC capture 6" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 6" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubH pixel array 0-0076" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubH scaler 0-0076" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 7" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="2" ConfigMode="AUTO" outputWidth="4032" outputHeight="2288" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubH pixel array 0-0076" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubH scaler 0-0076" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubH scaler 0-0076" pad="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubH scaler 0-0076" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="4032" height="2288"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="6" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 7" pad="0" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="22" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubH pixel array 0-0076" srcPad="0" sinkName="pixter_stubH scaler 0-0076" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubH scaler 0-0076" srcPad="1" sinkName="Intel IPU6 CSI-2 7" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 7" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="6" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="22" sinkName="Intel IPU6 BE SOC capture 6" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 6" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubH pixel array 0-0076" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubH scaler 0-0076" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 7" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="3" ConfigMode="AUTO" outputWidth="768" outputHeight="576" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubH pixel array 0-0076" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubH scaler 0-0076" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubH scaler 0-0076" pad="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubH scaler 0-0076" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="768" height="576"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="6" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 7" pad="0" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="22" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubH pixel array 0-0076" srcPad="0" sinkName="pixter_stubH scaler 0-0076" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubH scaler 0-0076" srcPad="1" sinkName="Intel IPU6 CSI-2 7" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 7" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="6" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="22" sinkName="Intel IPU6 BE SOC capture 6" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 6" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubH pixel array 0-0076" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubH scaler 0-0076" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 7" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="4" ConfigMode="AUTO" outputWidth="1312" outputHeight="984" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stubH pixel array 0-0076" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubH scaler 0-0076" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stubH scaler 0-0076" pad="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stubH scaler 0-0076" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="1312" height="984"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="6" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 7" pad="0" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="22" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <link srcName="pixter_stubH pixel array 0-0076" srcPad="0" sinkName="pixter_stubH scaler 0-0076" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubH scaler 0-0076" srcPad="1" sinkName="Intel IPU6 CSI-2 7" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 7" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="6" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="22" sinkName="Intel IPU6 BE SOC capture 6" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 6" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubH pixel array 0-0076" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubH scaler 0-0076" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 7" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_NV12,1920x1080,0,0,
+                                        V4L2_PIX_FMT_NV12,2816x1600,0,0,
+                                        V4L2_PIX_FMT_NV12,3840x2160,0,0,
+                                        V4L2_PIX_FMT_NV12,640x480,0,0,
+                                        V4L2_PIX_FMT_NV12,1280x720,0,0"/>
+            <supportedFeatures value="MANUAL_EXPOSURE,
+                                      MANUAL_WHITE_BALANCE,
+                                      IMAGE_ENHANCEMENT,
+                                      NOISE_REDUCTION,
+                                      SCENE_MODE,
+                                      WEIGHT_GRID_MODE,
+                                      ISP_CONTROL"/>
+            <supportedIspControls value="wb_gains,color_correction_matrix,advanced_color_correction_matrix,bxt_csc,bxt_demosaic,sc_iefd,see,bnlm,tnr5_21,xnr_dss,gamma_tone_map"/>
+            <supportedAeExposureTimeRange value="AUTO,90,33333"/> <!--scene_mode,min_exposure_time,max_exposure_time -->
+            <supportedAeGainRange value="NORMAL,0,60"/> <!--scene_mode,min_gain,max_gain -->
+            <fpsRange value="10,30,10,60"/>
+            <evRange value="-4,4"/>
+            <evStep value="1,1"/>
+            <supportedAeMode value="ON,OFF"/>
+            <supportedVideoStabilizationModes value="OFF"/>
+            <supportedSceneMode value="NORMAL"/>
+            <supportedAntibandingMode value="AUTO,50Hz,60Hz,OFF"/>
+            <supportedAwbMode value="AUTO,INCANDESCENT,FLUORESCENT,DAYLIGHT,FULL_OVERCAST,PARTLY_OVERCAST,SUNSET,VIDEO_CONFERENCE,MANUAL_CCT_RANGE,MANUAL_WHITE_POINT,MANUAL_GAIN,MANUAL_COLOR_TRANSFORM"/>
+        </StaticMetadata>
+
+        <supportedTuningConfig value="NORMAL,VIDEO,IMX135_13P2BAD33_TGL"/>
+
+        <supportedISysSizes value="2048x1536,2848x2136,4032x2288,768x576,1312x984"/> <!-- ascending order request -->
+        <supportedISysFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <enableAIQ value="true"/>
+        <iSysRawFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <pSysFormat value="V4L2_PIX_FMT_NV12"/>
+        <initialSkipFrame value="0"/>
+        <exposureLag value="2"/>
+        <gainLag value="1"/>
+        <ltmGainLag value="1"/>
+        <hdrExposureNum value="2"/>
+        <hdrExposureType value="fix-exposure-ratio"/>
+        <yuvColorRangeMode value="full"/> <!-- there are 2 yuv color range mode, like full, reduced. -->
+        <pipeSwitchDelayFrame value="60"/>
+        <graphSettingsFile value="graph_settings_pixter_imx477_be_soc.xml"/>
+        <enablePSysProcessor value="true"/>
+        <dvsType value="IMG_TRANS"/>
+    </Sensor>
+
+    <Sensor name="pixter-imx477-vc0" description="pixter virtual channel" virtualChannel="true" vcSeq="1" vcNum="1" vcGroupId="0">
+        <MediaCtlConfig id="0" ConfigMode="AUTO" outputWidth="2048" outputHeight="1536" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2048" height="1536"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="0" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="16" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="0" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="0" srcPad="1" srcStream="0" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="16" sinkName="Intel IPU6 BE SOC capture 0" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="0" sinkStream="0" srcPad="16" srcStream="0" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 0" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="1" ConfigMode="AUTO" outputWidth="4032" outputHeight="2288" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="4032" height="2288"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="0" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="16" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="0" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="0" srcPad="1" srcStream="0" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="16" sinkName="Intel IPU6 BE SOC capture 0" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="0" sinkStream="0" srcPad="16" srcStream="0" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 0" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="2" ConfigMode="AUTO" outputWidth="2848" outputHeight="2136" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="100000" height="100000" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="100000" height="100000" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2848" height="2136"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="0" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="16" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="0" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="0" srcPad="1" srcStream="0" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="16" sinkName="Intel IPU6 BE SOC capture 0" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="0" sinkStream="0" srcPad="16" srcStream="0" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 0" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="3" ConfigMode="AUTO" outputWidth="1312" outputHeight="984" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="1312" height="984"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="0" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="16" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="0" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="0" srcPad="1" srcStream="0" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="16" sinkName="Intel IPU6 BE SOC capture 0" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="0" sinkStream="0" srcPad="16" srcStream="0" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 0" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="4" ConfigMode="AUTO" outputWidth="768" outputHeight="576" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="768" height="576"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="0" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="16" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="0" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="0" srcPad="1" srcStream="0" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="16" sinkName="Intel IPU6 BE SOC capture 0" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="0" sinkStream="0" srcPad="16" srcStream="0" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 0" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_NV12,1920x1080,0,0,
+                                          V4L2_PIX_FMT_NV12,1280x720,0,0,
+                                          V4L2_PIX_FMT_NV12,3840x2160,0,0,
+                                          V4L2_PIX_FMT_NV12,2816x1600,0,0,
+                                          V4L2_PIX_FMT_NV12,640x480,0,0"/>
+            <supportedFeatures value="MANUAL_EXPOSURE,
+                                      MANUAL_WHITE_BALANCE,
+                                      IMAGE_ENHANCEMENT,
+                                      NOISE_REDUCTION,
+                                      SCENE_MODE,
+                                      WEIGHT_GRID_MODE,
+                                      ISP_CONTROL"/>
+            <supportedIspControls value="wb_gains,color_correction_matrix,advanced_color_correction_matrix,bxt_csc,bxt_demosaic,sc_iefd,see,bnlm,tnr5_21,xnr_dss,gamma_tone_map"/>
+            <supportedAeExposureTimeRange value="AUTO,90,33333"/> <!--scene_mode,min_exposure_time,max_exposure_time -->
+            <supportedAeGainRange value="NORMAL,0,60"/> <!--scene_mode,min_gain,max_gain -->
+            <fpsRange value="10,30,10,60"/>
+            <evRange value="-4,4"/>
+            <evStep value="1,1"/>
+            <supportedAeMode value="ON,OFF"/>
+            <supportedVideoStabilizationModes value="OFF"/>
+            <supportedSceneMode value="NORMAL"/>
+            <supportedAntibandingMode value="AUTO,50Hz,60Hz,OFF"/>
+            <supportedAwbMode value="AUTO,INCANDESCENT,FLUORESCENT,DAYLIGHT,FULL_OVERCAST,PARTLY_OVERCAST,SUNSET,VIDEO_CONFERENCE,MANUAL_CCT_RANGE,MANUAL_WHITE_POINT,MANUAL_GAIN,MANUAL_COLOR_TRANSFORM"/>
+        </StaticMetadata>
+
+        <supportedTuningConfig value="NORMAL,VIDEO,IMX135_13P2BAD33_TGL"/>
+
+        <supportedISysSizes value="768x576,2048x1536,1312x984,2848x2136,4032x2288"/> <!-- ascending order request -->
+        <supportedISysFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <enableAIQ value="true"/>
+        <iSysRawFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <pSysFormat value="V4L2_PIX_FMT_NV12"/>
+        <initialSkipFrame value="0"/>
+        <exposureLag value="2"/>
+        <gainLag value="1"/>
+        <ltmGainLag value="1"/>
+        <hdrExposureNum value="2"/>
+        <hdrExposureType value="fix-exposure-ratio"/>
+        <yuvColorRangeMode value="full"/> <!-- there are 2 yuv color range mode, like full, reduced. -->
+        <pipeSwitchDelayFrame value="60"/>
+        <graphSettingsFile value="graph_settings_pixter_imx477_be_soc.xml"/>
+        <dvsType value="IMG_TRANS"/>
+    </Sensor>
+
+    <Sensor name="pixter-imx477-vc1" description="pixter virtual channel" virtualChannel="true" vcSeq="2" vcNum="1" vcGroupId="0">
+        <MediaCtlConfig id="0" ConfigMode="AUTO" outputWidth="2048" outputHeight="1536" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2048" height="1536"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="2" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="17" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="1" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="2" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="1" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="1" srcPad="2" srcStream="1" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="17" sinkName="Intel IPU6 BE SOC capture 1" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="1" sinkStream="1" srcPad="17" srcStream="1" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 1" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="1" ConfigMode="AUTO" outputWidth="4032" outputHeight="2288" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="4032" height="2288"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="2" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="17" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="1" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="2" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="1" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="1" srcPad="2" srcStream="1" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="17" sinkName="Intel IPU6 BE SOC capture 1" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="1" sinkStream="1" srcPad="17" srcStream="1" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 1" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="2" ConfigMode="AUTO" outputWidth="2848" outputHeight="2136" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="100000" height="100000" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="100000" height="100000" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2848" height="2136"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="2" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="17" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="1" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="2" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="1" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="1" srcPad="2" srcStream="1" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="17" sinkName="Intel IPU6 BE SOC capture 1" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="1" sinkStream="1" srcPad="17" srcStream="1" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 1" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="3" ConfigMode="AUTO" outputWidth="1312" outputHeight="984" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="1312" height="984"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="2" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="17" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="1" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="2" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="1" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="1" srcPad="2" srcStream="1" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="17" sinkName="Intel IPU6 BE SOC capture 1" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="1" sinkStream="1" srcPad="17" srcStream="1" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 1" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="4" ConfigMode="AUTO" outputWidth="768" outputHeight="576" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="768" height="576"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="2" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="17" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="1" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="2" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="1" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="1" srcPad="2" srcStream="1" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="17" sinkName="Intel IPU6 BE SOC capture 1" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="1" sinkStream="1" srcPad="17" srcStream="1" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 1" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_NV12,1920x1080,0,0,
+                                          V4L2_PIX_FMT_NV12,1280x720,0,0,
+                                          V4L2_PIX_FMT_NV12,3840x2160,0,0,
+                                          V4L2_PIX_FMT_NV12,2816x1600,0,0,
+                                          V4L2_PIX_FMT_NV12,640x480,0,0"/>
+            <supportedFeatures value="MANUAL_EXPOSURE,
+                                      MANUAL_WHITE_BALANCE,
+                                      IMAGE_ENHANCEMENT,
+                                      NOISE_REDUCTION,
+                                      SCENE_MODE,
+                                      WEIGHT_GRID_MODE,
+                                      ISP_CONTROL"/>
+            <supportedIspControls value="wb_gains,color_correction_matrix,advanced_color_correction_matrix,bxt_csc,bxt_demosaic,sc_iefd,see,bnlm,tnr5_21,xnr_dss,gamma_tone_map"/>
+            <supportedAeExposureTimeRange value="AUTO,90,33333"/> <!--scene_mode,min_exposure_time,max_exposure_time -->
+            <supportedAeGainRange value="NORMAL,0,60"/> <!--scene_mode,min_gain,max_gain -->
+            <fpsRange value="10,30,10,60"/>
+            <evRange value="-4,4"/>
+            <evStep value="1,1"/>
+            <supportedAeMode value="ON,OFF"/>
+            <supportedVideoStabilizationModes value="OFF"/>
+            <supportedSceneMode value="NORMAL"/>
+            <supportedAntibandingMode value="AUTO,50Hz,60Hz,OFF"/>
+            <supportedAwbMode value="AUTO,INCANDESCENT,FLUORESCENT,DAYLIGHT,FULL_OVERCAST,PARTLY_OVERCAST,SUNSET,VIDEO_CONFERENCE,MANUAL_CCT_RANGE,MANUAL_WHITE_POINT,MANUAL_GAIN,MANUAL_COLOR_TRANSFORM"/>
+        </StaticMetadata>
+
+        <supportedTuningConfig value="NORMAL,VIDEO,IMX135_13P2BAD33_TGL"/>
+
+        <supportedISysSizes value="768x576,2048x1536,1312x984,2848x2136,4032x2288"/> <!-- ascending order request -->
+        <supportedISysFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <enableAIQ value="true"/>
+        <iSysRawFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <pSysFormat value="V4L2_PIX_FMT_NV12"/>
+        <initialSkipFrame value="0"/>
+        <exposureLag value="2"/>
+        <gainLag value="1"/>
+        <ltmGainLag value="1"/>
+        <hdrExposureNum value="2"/>
+        <hdrExposureType value="fix-exposure-ratio"/>
+        <yuvColorRangeMode value="full"/> <!-- there are 2 yuv color range mode, like full, reduced. -->
+        <pipeSwitchDelayFrame value="60"/>
+        <graphSettingsFile value="graph_settings_pixter_imx477_be_soc.xml"/>
+        <dvsType value="IMG_TRANS"/>
+    </Sensor>
+
+    <Sensor name="pixter-imx477-vc2" description="pixter virtual channel" virtualChannel="true" vcSeq="3" vcNum="1" vcGroupId="0">
+        <MediaCtlConfig id="0" ConfigMode="AUTO" outputWidth="2048" outputHeight="1536" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2048" height="1536"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="2" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="3" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="2" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="18" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="2" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="3" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="2" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="2" srcPad="3" srcStream="2" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="18" sinkName="Intel IPU6 BE SOC capture 2" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="2" sinkStream="2" srcPad="18" srcStream="2" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 2" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="1" ConfigMode="AUTO" outputWidth="4032" outputHeight="2288" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="4032" height="2288"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="2" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="3" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="2" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="18" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="2" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="3" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="2" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="2" srcPad="3" srcStream="2" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="18" sinkName="Intel IPU6 BE SOC capture 2" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="2" sinkStream="2" srcPad="18" srcStream="2" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 2" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="2" ConfigMode="AUTO" outputWidth="2848" outputHeight="2136" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="100000" height="100000" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="100000" height="100000" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2848" height="2136"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="2" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="3" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="2" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="18" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="2" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="3" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="2" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="2" srcPad="3" srcStream="2" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="18" sinkName="Intel IPU6 BE SOC capture 2" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="2" sinkStream="2" srcPad="18" srcStream="2" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 2" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="3" ConfigMode="AUTO" outputWidth="1312" outputHeight="984" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="1312" height="984"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="2" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="3" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="2" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="18" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="2" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="3" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="2" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="2" srcPad="3" srcStream="2" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="18" sinkName="Intel IPU6 BE SOC capture 2" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="2" sinkStream="2" srcPad="18" srcStream="2" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 2" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="4" ConfigMode="AUTO" outputWidth="768" outputHeight="576" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="768" height="576"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="2" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="3" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="2" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="18" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="2" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="3" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="2" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="2" srcPad="3" srcStream="2" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="18" sinkName="Intel IPU6 BE SOC capture 2" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="2" sinkStream="2" srcPad="18" srcStream="2" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 2" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_NV12,1920x1080,0,0,
+                                          V4L2_PIX_FMT_NV12,1280x720,0,0,
+                                          V4L2_PIX_FMT_NV12,3840x2160,0,0,
+                                          V4L2_PIX_FMT_NV12,2816x1600,0,0,
+                                          V4L2_PIX_FMT_NV12,640x480,0,0"/>
+            <supportedFeatures value="MANUAL_EXPOSURE,
+                                      MANUAL_WHITE_BALANCE,
+                                      IMAGE_ENHANCEMENT,
+                                      NOISE_REDUCTION,
+                                      SCENE_MODE,
+                                      WEIGHT_GRID_MODE,
+                                      ISP_CONTROL"/>
+            <supportedIspControls value="wb_gains,color_correction_matrix,advanced_color_correction_matrix,bxt_csc,bxt_demosaic,sc_iefd,see,bnlm,tnr5_21,xnr_dss,gamma_tone_map"/>
+            <supportedAeExposureTimeRange value="AUTO,90,33333"/> <!--scene_mode,min_exposure_time,max_exposure_time -->
+            <supportedAeGainRange value="NORMAL,0,60"/> <!--scene_mode,min_gain,max_gain -->
+            <fpsRange value="10,30,10,60"/>
+            <evRange value="-4,4"/>
+            <evStep value="1,1"/>
+            <supportedAeMode value="ON,OFF"/>
+            <supportedVideoStabilizationModes value="OFF"/>
+            <supportedSceneMode value="NORMAL"/>
+            <supportedAntibandingMode value="AUTO,50Hz,60Hz,OFF"/>
+            <supportedAwbMode value="AUTO,INCANDESCENT,FLUORESCENT,DAYLIGHT,FULL_OVERCAST,PARTLY_OVERCAST,SUNSET,VIDEO_CONFERENCE,MANUAL_CCT_RANGE,MANUAL_WHITE_POINT,MANUAL_GAIN,MANUAL_COLOR_TRANSFORM"/>
+        </StaticMetadata>
+
+        <supportedTuningConfig value="NORMAL,VIDEO,IMX135_13P2BAD33_TGL"/>
+
+        <supportedISysSizes value="768x576,2048x1536,1312x984,2848x2136,4032x2288"/> <!-- ascending order request -->
+        <supportedISysFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <enableAIQ value="true"/>
+        <iSysRawFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <pSysFormat value="V4L2_PIX_FMT_NV12"/>
+        <initialSkipFrame value="0"/>
+        <exposureLag value="2"/>
+        <gainLag value="1"/>
+        <ltmGainLag value="1"/>
+        <hdrExposureNum value="2"/>
+        <hdrExposureType value="fix-exposure-ratio"/>
+        <yuvColorRangeMode value="full"/> <!-- there are 2 yuv color range mode, like full, reduced. -->
+        <pipeSwitchDelayFrame value="60"/>
+        <graphSettingsFile value="graph_settings_pixter_imx477_be_soc.xml"/>
+        <dvsType value="IMG_TRANS"/>
+    </Sensor>
+
+    <Sensor name="pixter-imx477-vc3" description="pixter virtual channel" virtualChannel="true" vcSeq="4" vcNum="1" vcGroupId="0">
+        <MediaCtlConfig id="0" ConfigMode="AUTO" outputWidth="2048" outputHeight="1536" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2048" height="1536"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="3" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="4" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="3" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="19" width="2048" height="1536" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="3" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="4" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="3" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="3" srcPad="4" srcStream="3" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="19" sinkName="Intel IPU6 BE SOC capture 3" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="3" sinkStream="3" srcPad="19" srcStream="3" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 3" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="1" ConfigMode="AUTO" outputWidth="4032" outputHeight="2288" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="4032" height="2288"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="3" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="4" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="3" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="19" width="4032" height="2288" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="3" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="4" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="3" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="3" srcPad="4" srcStream="3" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="19" sinkName="Intel IPU6 BE SOC capture 3" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="3" sinkStream="3" srcPad="19" srcStream="3" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 3" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="2" ConfigMode="AUTO" outputWidth="2848" outputHeight="2136" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="100000" height="100000" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="100000" height="100000" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="2848" height="2136"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="3" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="4" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="3" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="19" width="2848" height="2136" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="3" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="4" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="3" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="3" srcPad="4" srcStream="3" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="19" sinkName="Intel IPU6 BE SOC capture 3" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="3" sinkStream="3" srcPad="19" srcStream="3" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 3" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="3" ConfigMode="AUTO" outputWidth="1312" outputHeight="984" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="1312" height="984"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="3" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="4" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="3" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="19" width="1312" height="984" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="3" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="4" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="3" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="3" srcPad="4" srcStream="3" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="19" sinkName="Intel IPU6 BE SOC capture 3" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="3" sinkStream="3" srcPad="19" srcStream="3" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 3" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <MediaCtlConfig id="4" ConfigMode="AUTO" outputWidth="768" outputHeight="576" format="V4L2_PIX_FMT_SGRBG10"> <!-- RAW10 BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="pixter_stub scaler 0-007d" pad="1" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="768" height="576"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="3" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI-2 0" pad="4" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="3" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="19" width="768" height="576" format="V4L2_MBUS_FMT_SGRBG10_1X10"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="3" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="4" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="3" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="3" srcPad="4" srcStream="3" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="19" sinkName="Intel IPU6 BE SOC capture 3" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="3" sinkStream="3" srcPad="19" srcStream="3" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 3" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_NV12,1920x1080,0,0,
+                                          V4L2_PIX_FMT_NV12,1280x720,0,0,
+                                          V4L2_PIX_FMT_NV12,3840x2160,0,0,
+                                          V4L2_PIX_FMT_NV12,2816x1600,0,0,
+                                          V4L2_PIX_FMT_NV12,640x480,0,0"/>
+            <supportedFeatures value="MANUAL_EXPOSURE,
+                                      MANUAL_WHITE_BALANCE,
+                                      IMAGE_ENHANCEMENT,
+                                      NOISE_REDUCTION,
+                                      SCENE_MODE,
+                                      WEIGHT_GRID_MODE,
+                                      ISP_CONTROL"/>
+            <supportedIspControls value="wb_gains,color_correction_matrix,advanced_color_correction_matrix,bxt_csc,bxt_demosaic,sc_iefd,see,bnlm,tnr5_21,xnr_dss,gamma_tone_map"/>
+            <supportedAeExposureTimeRange value="AUTO,90,33333"/> <!--scene_mode,min_exposure_time,max_exposure_time -->
+            <supportedAeGainRange value="NORMAL,0,60"/> <!--scene_mode,min_gain,max_gain -->
+            <fpsRange value="10,30,10,60"/>
+            <evRange value="-4,4"/>
+            <evStep value="1,1"/>
+            <supportedAeMode value="ON,OFF"/>
+            <supportedVideoStabilizationModes value="OFF"/>
+            <supportedSceneMode value="NORMAL"/>
+            <supportedAntibandingMode value="AUTO,50Hz,60Hz,OFF"/>
+            <supportedAwbMode value="AUTO,INCANDESCENT,FLUORESCENT,DAYLIGHT,FULL_OVERCAST,PARTLY_OVERCAST,SUNSET,VIDEO_CONFERENCE,MANUAL_CCT_RANGE,MANUAL_WHITE_POINT,MANUAL_GAIN,MANUAL_COLOR_TRANSFORM"/>
+        </StaticMetadata>
+
+        <supportedTuningConfig value="NORMAL,VIDEO,IMX135_13P2BAD33_TGL"/>
+
+        <supportedISysSizes value="768x576,2048x1536,1312x984,2848x2136,4032x2288"/> <!-- ascending order request -->
+        <supportedISysFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <enableAIQ value="true"/>
+        <iSysRawFormat value="V4L2_PIX_FMT_SGRBG10"/>
+        <pSysFormat value="V4L2_PIX_FMT_NV12"/>
+        <initialSkipFrame value="0"/>
+        <exposureLag value="2"/>
+        <gainLag value="1"/>
+        <ltmGainLag value="1"/>
+        <hdrExposureNum value="2"/>
+        <hdrExposureType value="fix-exposure-ratio"/>
+        <yuvColorRangeMode value="full"/> <!-- there are 2 yuv color range mode, like full, reduced. -->
+        <pipeSwitchDelayFrame value="60"/>
+        <graphSettingsFile value="graph_settings_pixter_imx477_be_soc.xml"/>
+        <dvsType value="IMG_TRANS"/>
+    </Sensor>
+</CameraSettings>

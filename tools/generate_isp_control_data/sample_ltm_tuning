@@ -1,0 +1,44 @@
+// This is a sample data file to indicate how to the data organized.
+// C/C++ styled one-line comment '//' is supported.
+// Other members of ltm_tuning_data which are not provided here will be set to 0.
+
+algo_mode : ltm_algo_optibright_gain_map
+
+optibright_tuning.GTM_Str : 120
+optibright_tuning.GF_epspar : 2621
+optibright_tuning.alpham1 : 32767
+optibright_tuning.alpham : 21299
+optibright_tuning.maskmin : 0
+optibright_tuning.maskmax : 4915
+optibright_tuning.num_iteration : 16
+optibright_tuning.maskmid : 4915
+optibright_tuning.hlc_mode : 0
+optibright_tuning.max_isp_gain : 32
+optibright_tuning.convergence_speed : 1229
+optibright_tuning.lm_treatment : 22938
+optibright_tuning.GTM_mode : 1
+optibright_tuning.pre_gamma : 60
+optibright_tuning.lav2p_scale : 5
+optibright_tuning.p_max : 9830
+optibright_tuning.p_mode : 0
+optibright_tuning.p_value : 9830
+optibright_tuning.filter_size : 0
+optibright_tuning.max_percentile : 32604
+optibright_tuning.ldr_brightness : 10650
+optibright_tuning.dr_mid : 7022
+optibright_tuning.dr_norm_max : 7168
+optibright_tuning.dr_norm_min : 0
+optibright_tuning.convergence_speed_slow : 8192
+optibright_tuning.convergence_sigma : 4915
+optibright_tuning.gainext_mode : 1
+optibright_tuning.wdr_scale_max : 12288
+optibright_tuning.wdr_scale_min : 1024
+optibright_tuning.wdr_gain_max : 16384
+optibright_tuning.frame_delay_compensation : 1
+
+mpgc_tuning.lm_stability : 3277
+mpgc_tuning.lm_sensitivity : 16
+mpgc_tuning.blur_size : 1
+mpgc_tuning.tf_str : 6553
+
+drcsw_tuning.blus_sim_sigma : 8192

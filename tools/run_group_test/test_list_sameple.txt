@@ -1,0 +1,34 @@
+./case_camera_device_ops.cpp:31:TEST_F(camHalTest, camera_hal_init_deinit_normal)  SKIP
+./case_camera_device_ops.cpp:40:TEST_F(camHalTest, camera_hal_init_twice)  SKIP
+./case_camera_device_ops.cpp:52:TEST_F(camHalTest, camera_device_open_close_normal)  SKIP
+./case_camera_device_ops.cpp:66:TEST_F(camHalTest, camera_device_open_twice)  SKIP
+./case_camera_device_ops.cpp:84:TEST_F(camHalTest, camera_device_open_close_invalid_param)
+./case_camera_device_ops.cpp:99:TEST_F(camHalTest, camera_device_stop_without_start)
+./case_camera_device_ops.cpp:117:TEST_F(camHalTest, camera_device_try_to_open_all_cameras)
+./case_camera_device_ops.cpp:138:TEST_F(camHalTest, camera_multi_process_open_the_same_device)
+./case_camera_device_ops.cpp:166:TEST_F(camHalTest, camera_multi_process_open_different_devices)
+./case_qbuf_dqbuf.cpp:36:TEST_F(camHalTest, camhal_qbuf_dqbuf_1080p_NV12_q8buffer_dq1buffer)
+./case_qbuf_dqbuf.cpp:41:TEST_F(camHalTest, camhal_qbuf_dqbuf_1080p_NV12_100_buffers)
+./case_qbuf_dqbuf.cpp:46:TEST_F(camHalTest, camhal_qbuf_dqbuf_1280x1080_SRGGB12_100_buffers)
+./case_qbuf_dqbuf.cpp:51:TEST_F(camHalTest, camhal_qbuf_dqbuf_all_supported_resolution_format)
+
+
+# This is a demostration on how to group test case that listed in this file
+#
+# put run_each_UTtest.sh inside libcamhal/test/, and it is parallel to folder UT/
+#
+# Just use {grep -rn "TEST_F" UT/ > UT_list.txt}, or you can do {grep "TEST" UT/ > UT_list.txt}
+# All searched test cases listed in this txt, one case for one UT test, like shown above
+#
+# We will grab Test Class name from first section in the line.
+# The second section goes for test name.
+# Third section is "SKIP CONTROL". If we want to skip this test, add third section with "SKIP" behind.
+#
+# Each section in one line, are seperated by space, so awk can recognize it.
+#
+# Example:
+#
+# |---< Test Class >---|----< Test Name >------|-----<SKIP CONTROL>----|
+# |-----camHalTest-----|------camera_hal_init_deinit_normal-----|-----SKIP----|
+# ./case_camera_device_ops.cpp:31:TEST_F(camHalTest, camera_hal_init_deinit_normal)  SKIP
+#

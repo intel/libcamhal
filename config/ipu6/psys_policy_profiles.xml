@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C) 2016-2018 Intel Corporation.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<PsysPolicyConfig>
+    <graph id="100033">
+        <!-- op_modes: 0-disabled, 2-coupled. see ia_cipf_css.h in libiacss -->
+        <pipe_executor name="YUV_sensor_block_base_pipe"  pgs="ipu6_post_gdc_video_3" op_modes="0"/>
+    </graph>
+
+    <graph id="100032">
+        <!-- op_modes: 0-disabled, 2-coupled. see ia_cipf_css.h in libiacss -->
+        <pipe_executor name="Bayer sensor full pipe v10s10"  pgs="ipu6_isa_lb_video,ipu6_post_gdc_video_3" op_modes="0,0"/>
+    </graph>
+
+    <graph id="100002">
+        <!-- op_modes: 0-disabled, 2-coupled. see ia_cipf_css.h in libiacss -->
+        <pipe_executor name="ipu6_full_video_pipe_with_dol"  pgs="ipu6_isa_lb_dol_video,ipu6_post_gdc_video_3" op_modes="0,0"/>
+    </graph>
+
+    <graph id="100003">
+        <!-- op_modes: 0-disabled, 2-coupled. see ia_cipf_css.h in libiacss -->
+        <pipe_executor name="ipu6_full_video_pipe_with_combined_pg"  pgs="ipu6_isa_lb_video,ipu6_post_gdc_video_3" op_modes="0,0"/>
+    </graph>
+
+    <graph id="100004">
+        <!-- op_modes: 0-disabled, 2-coupled. see ia_cipf_css.h in libiacss -->
+        <pipe_executor name="ipu6_full_video_pipe_185+183+189"  pgs="ipu6_isl_video,ipu6_lb_video,ipu6_post_gdc_video_3" op_modes="0,0"/>
+    </graph>
+
+    <graph id="100005">
+        <!-- op_modes: 0-disabled, 2-coupled. see ia_cipf_css.h in libiacss -->
+        <pipe_executor name="ipu6_full_video_pipe_be_soc"  pgs="ipu6_isa_lb_video,ipu6_post_gdc_video_3" op_modes="0,0"/>
+    </graph>
+
+    <graph id="100006">
+        <!-- op_modes: 0-disabled, 2-coupled. see ia_cipf_css.h in libiacss -->
+        <pipe_executor name="ipu6_full_video_pipe_with_dol_2_inputs"  pgs="ipu6_isa_lb_dol_video,ipu6_post_gdc_video_3" op_modes="0,0"/>
+    </graph>
+
+</PsysPolicyConfig>

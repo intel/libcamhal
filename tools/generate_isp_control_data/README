@@ -1,0 +1,36 @@
+#
+#  Copyright (C) 2017 Intel Corporation
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+#
+
+isp_ctrl_data_gen.py is used to generate ISP control data or LTM tuning data for testing from a text file.
+
+Prerequisites:
+python and mako, install them by: sudo apt-get install python python-mako
+
+Step to run:
+1. Copy HAL API file: IspControl.h and AlgoTuning.h to current folder.
+2. Update the ISP control data, please refer to file: sample_isp_control
+3. Update the LTM tuning data, please refer to file: sample_ltm_tuning
+3. Execute ./isp_ctrl_data_gen.py [ltm_tuning=ltm_tuning_data_file] [isp_control_data_file]
+   At least one of ltm_tuning_data_file or isp_control_data_file MUST be provided.
+   For ltm_tuning_data_file, a prefix "ltm_tuning=" MUST be added, or other arguments not started with
+   "ltm_tuning=" will be treated as ISP control data file.
+   ltm_tuning_data_file and isp_control_data_file can be parsed at same time.
+
+4. The output file will be named as *.bin which appends ".bin" after the data file.
+
+The tool can be used on the DUT as well, but you need to install python-mako rpm manually before step 3 above:
+1. wget ftp://rpmfind.net/linux/opensuse/distribution/13.2/repo/oss/suse/noarch/python-Mako-1.0.0-3.1.4.noarch.rpm
+2. sudo rpm -ivh --nodeps python-Mako-1.0.0-3.1.4.noarch.rpm

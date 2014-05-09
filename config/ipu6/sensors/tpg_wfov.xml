@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C) 2018 Intel Corporation.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<CameraSettings>
+    <Sensor name="tpg_wfov" description="TPG for ipu6 wfov testing.">
+        <MediaCtlConfig id="0" ConfigMode="AUTO" outputWidth="3840" outputHeight="2160" format="V4L2_PIX_FMT_SGRBG12"> <!-- RAW12 BE capture -->
+            <format name="Intel IPU6 CSI2 BE" pad="0" width="3840" height="2160" format="V4L2_MBUS_FMT_SGRBG12_1X12"/>
+            <format name="Intel IPU6 TPG 0" pad="0" width="3840" height="2160" format="V4L2_MBUS_FMT_SGRBG12_1X12"/>
+            <format name="Intel IPU6 CSI2 BE" pad="1" width="3840" height="2160" format="V4L2_MBUS_FMT_SGRBG12_1X12"/>
+            <link srcName="Intel IPU6 TPG 0" srcPad="0" sinkName="Intel IPU6 CSI2 BE" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE" srcPad="1" sinkName="Intel IPU6 CSI2 BE capture" sinkPad="0" enable="true"/>
+
+            <videonode name="Intel IPU6 CSI2 BE capture" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="Intel IPU6 TPG 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_NV12,3840x2160,0,0"/>
+            <supportedFeatures value="MANUAL_EXPOSURE,
+                                      MANUAL_WHITE_BALANCE,
+                                      IMAGE_ENHANCEMENT,
+                                      NOISE_REDUCTION,
+                                      SCENE_MODE,
+                                      WEIGHT_GRID_MODE,
+                                      ISP_CONTROL"/>
+            <supportedIspControls value="wb_gains,color_correction_matrix,advanced_color_correction_matrix,bxt_csc,bxt_demosaic,sc_iefd,see,bnlm,tnr5_21,xnr_dss,gamma_tone_map"/>
+            <supportedAeExposureTimeRange value="AUTO,90,33333"/> <!--scene_mode,min_exposure_time,max_exposure_time -->
+            <supportedAeGainRange value="NORMAL,0,60"/> <!--scene_mode,min_gain,max_gain -->
+            <fpsRange value="10,30,10,60"/>
+            <evRange value="-4,4"/>
+            <evStep value="1,1"/>
+            <supportedAeMode value="ON,OFF"/>
+            <supportedVideoStabilizationModes value="OFF"/>
+            <supportedSceneMode value="NORMAL"/>
+            <supportedAntibandingMode value="AUTO,50Hz,60Hz,OFF"/>
+            <supportedAwbMode value="AUTO,INCANDESCENT,FLUORESCENT,DAYLIGHT,FULL_OVERCAST,PARTLY_OVERCAST,SUNSET,VIDEO_CONFERENCE,MANUAL_CCT_RANGE,MANUAL_WHITE_POINT,MANUAL_GAIN,MANUAL_COLOR_TRANSFORM"/>
+            <WFOV value="ON"/>
+            <sensorMountType value="WALL_MOUNTED"/>
+            <viewProjection value="CYLINDRICAL, 0"/>
+            <viewRotation value="0, 0, 0"/>
+            <cameraRotation value="0, 0, 0"/>
+            <viewFineAdjustments value="0, -20, 0, 0.865"/>
+        </StaticMetadata>
+
+        <supportedTuningConfig value="NORMAL,VIDEO,0315_imx274_wfov.IPU6"/>
+
+        <supportedISysSizes value="3840x2160"/> <!-- ascending order request -->
+        <supportedISysFormat value="V4L2_PIX_FMT_SGRBG12"/>
+        <enableAIQ value="true"/>
+        <iSysRawFormat value="V4L2_PIX_FMT_SGRBG12"/>
+        <pSysFormat value="V4L2_PIX_FMT_NV12"/>
+        <initialSkipFrame value="0"/>
+        <exposureLag value="2"/>
+        <gainLag value="1"/>
+        <ltmGainLag value="1"/>
+        <yuvColorRangeMode value="full"/> <!-- there are 2 yuv color range mode, like full, reduced. -->
+        <pipeSwitchDelayFrame value="60"/>
+        <graphSettingsFile value="graph_settings_tpg_wfov.xml"/>
+        <enablePSysProcessor value="true"/>
+        <dvsType value="IMG_TRANS" />
+    </Sensor>
+</CameraSettings>

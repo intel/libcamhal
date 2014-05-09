@@ -1,0 +1,97 @@
+From a13427a393391192b543a9b90cce64f2c6d98c1c Mon Sep 17 00:00:00 2001
+From: Yang Liang <liang.l.yang@intel.com>
+Date: Sat, 24 Feb 2018 17:52:38 +0800
+Subject: [PATCH] libcamhal:chrome: workaround to build (NOT MERGE)
+
+Change-Id: I7448854321ed3595dc3edb1c0ee15e3cd50d17c4
+Signed-off-by: Yang Liang <liang.l.yang@intel.com>
+Signed-off-by: caoxi <xi.cao@intel.com>
+Signed-off-by: Yang Liang <liang.l.yang@intel.com>
+Signed-off-by: caoxi <xi.cao@intel.com>
+---
+ Makefile.am  | 16 +++++++---------
+ configure.ac | 19 ++++++++++++++++++-
+ 2 files changed, 25 insertions(+), 10 deletions(-)
+
+diff --git a/Makefile.am b/Makefile.am
+index 114ac91..18ca5e1 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -84,7 +84,7 @@ libcamhal_la_SOURCES += \
+     src/platformdata/TunningProfiles.cpp
+ # CUSTOM_WEIGHT_GRID_E
+ 
+-libcamhal_la_CPPFLAGS = -std=c++11 -Wall -Werror -fstack-protector -fPIE -fPIC -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
++libcamhal_la_CPPFLAGS = -std=c++11 -Wall -fstack-protector -fPIE -fPIC -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
+ libcamhal_la_CPPFLAGS += -D__STDC_FORMAT_MACROS -DHAVE_PTHREADS -DHAVE_LINUX_OS -DHAVE_IA_TYPES -DHAVE_PRCTL
+ libcamhal_la_CPPFLAGS += -Iinclude -Iinclude/api -Iinclude/utils -Iinclude/linux -Isrc/platformdata -Isrc/v4l2 -Isrc/core -Isrc/ -Isrc/metadata
+ libcamhal_la_CPPFLAGS += -Isrc/3a/intel3a -Isrc/3a/external -Isrc/3a -Isrc/platformdata/gc -Isrc/iutils
+@@ -122,14 +122,12 @@ libcamhal_la_SOURCES += \
+ libcamhal_la_SOURCES += src/jpeg/SWJpegEncoder.cpp
+ # SW_JPEG_ENCODE_E
+ 
+-libcamhal_la_LDFLAGS += -lcamera_client.pic -lcamera_metadata.pic -lcbm -lcamera_jpeg.pic
++libcamhal_la_LDFLAGS += -L/build/cnlrvp/usr/lib64/ $(LIBCAMERA_CLIENT_LIBS) $(LIBCAMERA_METADATA_LIBS) $(LIBCBM_LIBS) $(LIBCAMERA_JPEG_LIBS) -ljpeg
+ 
+-libcamhal_la_CPPFLAGS += -I../../android/header_files/include/hardware/libhardware/include/ \
+-                         -I../../android/header_files/include/system/core/include/ \
+-                         -I../../android/libcamera_client/include/ \
+-                         -I../../android/libcamera_metadata/include/ \
+-                         -I../../include/ \
+-                         -I../../../../aosp/system/libsync/include/
++libcamhal_la_CPPFLAGS += -I/build/cnlrvp/usr/include/android/ \
++                         -I/build/cnlrvp/usr/include/android/system/core/include/ \
++                         -I/build/cnlrvp/usr/include/android/hardware/libhardware/include/ \
++                         -I/build/cnlrvp/usr/include/
+ endif #CAL_BUILD
+ 
+ if ENABLE_VIRTUAL_IPU_PIPE
+@@ -158,7 +156,7 @@ libcamhal_la_LDFLAGS += -lia_aiq \
+ 
+ libcamhal_la_CPPFLAGS += $(IA_IMAGING_CFLAGS) \
+                          $(LIBIACSS_CFLAGS) \
+-                         $(LIBIPU4_CFLAGS)
++                         $(LIBIPU4P_CFLAGS)
+ 
+ libcamhal_la_SOURCES += \
+     src/core/PSysProcessor.cpp \
+diff --git a/configure.ac b/configure.ac
+index c9ce16b..315c384 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -77,7 +77,7 @@ else
+ # Checking the dependancy
+     PKG_CHECK_MODULES([IA_IMAGING], [ia_imaging])
+     PKG_CHECK_MODULES([LIBIACSS], [libiacss])
+-    PKG_CHECK_MODULES([LIBIPU4], [libipu4])
++    PKG_CHECK_MODULES([LIBIPU4P], [libipu4p])
+ 
+ fi
+ AM_CONDITIONAL(BYPASS_MODE, test "x$with_bypass" = "xyes")
+@@ -107,6 +107,23 @@ AC_ARG_WITH([cal], AC_HELP_STRING([--with-cal], [build cal]), [with_cal=yes], []
+ if test x"$with_cal" = xyes
+ then
+     AC_MSG_NOTICE([cal is built.])
++
++    AC_ARG_WITH([base-version], AS_HELP_STRING([--with-base-version=VERSION], \
++        [libbase version]), [], [with_base_version=no])
++    AS_IF([test "x$with_base_version" != xno], [BASEVER=$with_base_version],
++        [AC_MSG_ERROR([libbase version is not set])])
++
++    PKG_CHECK_MODULES([CROS_CAMERA_ANDROID_HEADERS], [cros-camera-android-headers])
++    PKG_CHECK_MODULES([LIBCAB], [libcab])
++    PKG_CHECK_MODULES([LIBCAMERA_CLIENT], [libcamera_client])
++    PKG_CHECK_MODULES([LIBCAMERA_COMMON], [libcamera_common])
++    PKG_CHECK_MODULES([LIBCAMERA_JPEG], [libcamera_jpeg])
++    PKG_CHECK_MODULES([LIBCAMERA_METADATA], [libcamera_metadata])
++    PKG_CHECK_MODULES([LIBCAMERA_V4L2_DEVICE], [libcamera_v4l2_device])
++    PKG_CHECK_MODULES([LIBCBM], [libcbm])
++    PKG_CHECK_MODULES([LIBCHROME], [libchrome-$BASEVER])
++    PKG_CHECK_MODULES([LIBMOJO], [libmojo-$BASEVER])
++    PKG_CHECK_MODULES([LIBSYNC], [libsync])
+     PKG_CHECK_MODULES([LIBYUV], [libyuv])
+ fi
+ AM_CONDITIONAL(CAL_BUILD, test "x$with_cal" == "xyes")
+-- 
+1.9.1
+

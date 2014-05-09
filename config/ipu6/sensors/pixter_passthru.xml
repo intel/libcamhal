@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (C) 2018 Intel Corporation.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<CameraSettings>
+    <Sensor name="pixter_passthru" description="pixter as sensor.">
+        <MediaCtlConfig id="0"> <!-- BE SOC capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stub scaler 0-007d" pad="1"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="0" height="0"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="0"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0"/>
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="16" sinkName="Intel IPU6 BE SOC capture 0" sinkPad="0" enable="true"/>
+            <videonode name="Intel IPU6 BE SOC capture 0" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_UYVY,640x480,0,0,
+                                          V4L2_PIX_FMT_UYVY,1280x720,0,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,0,0,
+                                          V4L2_PIX_FMT_UYVY,2816x1600,0,0,
+                                          V4L2_PIX_FMT_UYVY,3840x2160,0,0,
+                                          V4L2_PIX_FMT_UYVY,720x576,7,0,
+                                          V4L2_PIX_FMT_UYVY,720x480,7,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,7,0,
+                                          V4L2_PIX_FMT_YUYV,640x480,0,0,
+                                          V4L2_PIX_FMT_YUYV,1280x720,0,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,0,0,
+                                          V4L2_PIX_FMT_YUYV,2816x1600,0,0,
+                                          V4L2_PIX_FMT_YUYV,3840x2160,0,0,
+                                          V4L2_PIX_FMT_YUYV,720x576,7,0,
+                                          V4L2_PIX_FMT_YUYV,720x480,7,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XRGB32,640x480,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XRGB32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XRGB32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XRGB32,720x576,7,0,
+                                          V4L2_PIX_FMT_XRGB32,720x480,7,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XBGR32,640x480,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XBGR32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XBGR32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XBGR32,720x576,7,0,
+                                          V4L2_PIX_FMT_XBGR32,720x480,7,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,7,0"/>
+           <fpsRange value="10,30,10,60"/>
+       </StaticMetadata>
+
+       <supportedISysSizes value="640x480,720x480,720x576,1280x720,1920x1080,2816x1600,3840x2160"/> <!-- ascending order request -->
+       <supportedISysFormat value="V4L2_PIX_FMT_UYVY,V4L2_PIX_FMT_YUYV,V4L2_PIX_FMT_XRGB32,V4L2_PIX_FMT_XBGR32"/>
+       <enableAIQ value="false"/>
+    </Sensor>
+
+    <Sensor name="pixter_passthru_b" description="pixter as sensor for port B.">
+        <MediaCtlConfig id="0"> <!-- BE SOC capture -->
+            <format name="pixter_stubB pixel array 0-007c" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stubB scaler 0-007c" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stubB scaler 0-007c" pad="1"/>
+            <selection name="pixter_stubB scaler 0-007c" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="0" height="0"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="1"/>
+            <format name="Intel IPU6 CSI-2 1" pad="0"/>
+            <link srcName="pixter_stubB pixel array 0-007c" srcPad="0" sinkName="pixter_stubB scaler 0-007c" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubB scaler 0-007c" srcPad="1" sinkName="Intel IPU6 CSI-2 1" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 1" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="1" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="17" sinkName="Intel IPU6 BE SOC capture 1" sinkPad="0" enable="true"/>
+            <videonode name="Intel IPU6 BE SOC capture 1" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubB pixel array 0-007c" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubB scaler 0-007c" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 1" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_UYVY,640x480,0,0,
+                                          V4L2_PIX_FMT_UYVY,1280x720,0,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,0,0,
+                                          V4L2_PIX_FMT_UYVY,2816x1600,0,0,
+                                          V4L2_PIX_FMT_UYVY,3840x2160,0,0,
+                                          V4L2_PIX_FMT_UYVY,720x576,7,0,
+                                          V4L2_PIX_FMT_UYVY,720x480,7,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,7,0,
+                                          V4L2_PIX_FMT_YUYV,640x480,0,0,
+                                          V4L2_PIX_FMT_YUYV,1280x720,0,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,0,0,
+                                          V4L2_PIX_FMT_YUYV,2816x1600,0,0,
+                                          V4L2_PIX_FMT_YUYV,3840x2160,0,0,
+                                          V4L2_PIX_FMT_YUYV,720x576,7,0,
+                                          V4L2_PIX_FMT_YUYV,720x480,7,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XRGB32,640x480,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XRGB32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XRGB32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XRGB32,720x576,7,0,
+                                          V4L2_PIX_FMT_XRGB32,720x480,7,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XBGR32,640x480,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XBGR32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XBGR32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XBGR32,720x576,7,0,
+                                          V4L2_PIX_FMT_XBGR32,720x480,7,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,7,0"/>
+           <fpsRange value="10,30,10,60"/>
+       </StaticMetadata>
+
+       <supportedISysSizes value="640x480,720x480,720x576,1280x720,1920x1080,2816x1600,3840x2160"/> <!-- ascending order request -->
+       <supportedISysFormat value="V4L2_PIX_FMT_UYVY,V4L2_PIX_FMT_YUYV,V4L2_PIX_FMT_XRGB32,V4L2_PIX_FMT_XBGR32"/>
+       <enableAIQ value="false"/>
+    </Sensor>
+
+    <Sensor name="pixter_passthru_c" description="pixter as sensor for port C.">
+        <MediaCtlConfig id="0"> <!-- BE SOC capture -->
+            <format name="pixter_stubC pixel array 0-007b" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stubC scaler 0-007b" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stubC scaler 0-007b" pad="1"/>
+            <selection name="pixter_stubC scaler 0-007b" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="0" height="0"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="2"/>
+            <format name="Intel IPU6 CSI-2 2" pad="0"/>
+            <link srcName="pixter_stubC pixel array 0-007b" srcPad="0" sinkName="pixter_stubC scaler 0-007b" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubC scaler 0-007b" srcPad="1" sinkName="Intel IPU6 CSI-2 2" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 2" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="2" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="18" sinkName="Intel IPU6 BE SOC capture 2" sinkPad="0" enable="true"/>
+            <videonode name="Intel IPU6 BE SOC capture 2" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubC pixel array 0-007b" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubC scaler 0-007b" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 2" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_UYVY,640x480,0,0,
+                                          V4L2_PIX_FMT_UYVY,1280x720,0,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,0,0,
+                                          V4L2_PIX_FMT_UYVY,2816x1600,0,0,
+                                          V4L2_PIX_FMT_UYVY,3840x2160,0,0,
+                                          V4L2_PIX_FMT_UYVY,720x576,7,0,
+                                          V4L2_PIX_FMT_UYVY,720x480,7,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,7,0,
+                                          V4L2_PIX_FMT_YUYV,640x480,0,0,
+                                          V4L2_PIX_FMT_YUYV,1280x720,0,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,0,0,
+                                          V4L2_PIX_FMT_YUYV,2816x1600,0,0,
+                                          V4L2_PIX_FMT_YUYV,3840x2160,0,0,
+                                          V4L2_PIX_FMT_YUYV,720x576,7,0,
+                                          V4L2_PIX_FMT_YUYV,720x480,7,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XRGB32,640x480,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XRGB32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XRGB32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XRGB32,720x576,7,0,
+                                          V4L2_PIX_FMT_XRGB32,720x480,7,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XBGR32,640x480,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XBGR32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XBGR32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XBGR32,720x576,7,0,
+                                          V4L2_PIX_FMT_XBGR32,720x480,7,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,7,0"/>
+           <fpsRange value="10,30,10,60"/>
+       </StaticMetadata>
+
+       <supportedISysSizes value="640x480,720x480,720x576,1280x720,1920x1080,2816x1600,3840x2160"/> <!-- ascending order request -->
+       <supportedISysFormat value="V4L2_PIX_FMT_UYVY,V4L2_PIX_FMT_YUYV,V4L2_PIX_FMT_XRGB32,V4L2_PIX_FMT_XBGR32"/>
+       <enableAIQ value="false"/>
+    </Sensor>
+
+    <Sensor name="pixter_passthru_d" description="pixter as sensor for port D.">
+        <MediaCtlConfig id="0"> <!-- BE SOC capture -->
+            <format name="pixter_stubD pixel array 0-007a" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stubD scaler 0-007a" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stubD scaler 0-007a" pad="1"/>
+            <selection name="pixter_stubD scaler 0-007a" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="0" height="0"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="3"/>
+            <format name="Intel IPU6 CSI-2 3" pad="0"/>
+            <link srcName="pixter_stubD pixel array 0-007a" srcPad="0" sinkName="pixter_stubD scaler 0-007a" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubD scaler 0-007a" srcPad="1" sinkName="Intel IPU6 CSI-2 3" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 3" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="3" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="19" sinkName="Intel IPU6 BE SOC capture 3" sinkPad="0" enable="true"/>
+            <videonode name="Intel IPU6 BE SOC capture 3" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubD pixel array 0-007a" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubD scaler 0-007a" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 3" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_UYVY,640x480,0,0,
+                                          V4L2_PIX_FMT_UYVY,1280x720,0,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,0,0,
+                                          V4L2_PIX_FMT_UYVY,2816x1600,0,0,
+                                          V4L2_PIX_FMT_UYVY,3840x2160,0,0,
+                                          V4L2_PIX_FMT_UYVY,720x576,7,0,
+                                          V4L2_PIX_FMT_UYVY,720x480,7,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,7,0,
+                                          V4L2_PIX_FMT_YUYV,640x480,0,0,
+                                          V4L2_PIX_FMT_YUYV,1280x720,0,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,0,0,
+                                          V4L2_PIX_FMT_YUYV,2816x1600,0,0,
+                                          V4L2_PIX_FMT_YUYV,3840x2160,0,0,
+                                          V4L2_PIX_FMT_YUYV,720x576,7,0,
+                                          V4L2_PIX_FMT_YUYV,720x480,7,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XRGB32,640x480,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XRGB32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XRGB32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XRGB32,720x576,7,0,
+                                          V4L2_PIX_FMT_XRGB32,720x480,7,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XBGR32,640x480,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XBGR32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XBGR32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XBGR32,720x576,7,0,
+                                          V4L2_PIX_FMT_XBGR32,720x480,7,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,7,0"/>
+           <fpsRange value="10,30,10,60"/>
+       </StaticMetadata>
+
+       <supportedISysSizes value="640x480,720x480,720x576,1280x720,1920x1080,2816x1600,3840x2160"/> <!-- ascending order request -->
+       <supportedISysFormat value="V4L2_PIX_FMT_UYVY,V4L2_PIX_FMT_YUYV,V4L2_PIX_FMT_XRGB32,V4L2_PIX_FMT_XBGR32"/>
+       <enableAIQ value="false"/>
+    </Sensor>
+
+    <Sensor name="pixter_passthru_e" description="pixter as sensor for port E.">
+        <MediaCtlConfig id="0"> <!-- BE SOC capture -->
+            <format name="pixter_stubE pixel array 0-0079" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stubE scaler 0-0079" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stubE scaler 0-0079" pad="1"/>
+            <selection name="pixter_stubE scaler 0-0079" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="0" height="0"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="4"/>
+            <format name="Intel IPU6 CSI-2 4" pad="0"/>
+            <link srcName="pixter_stubE pixel array 0-0079" srcPad="0" sinkName="pixter_stubE scaler 0-0079" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubE scaler 0-0079" srcPad="1" sinkName="Intel IPU6 CSI-2 4" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 4" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="4" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="20" sinkName="Intel IPU6 BE SOC capture 4" sinkPad="0" enable="true"/>
+            <videonode name="Intel IPU6 BE SOC capture 4" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubE pixel array 0-0079" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubE scaler 0-0079" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 4" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_UYVY,640x480,0,0,
+                                          V4L2_PIX_FMT_UYVY,1280x720,0,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,0,0,
+                                          V4L2_PIX_FMT_UYVY,2816x1600,0,0,
+                                          V4L2_PIX_FMT_UYVY,3840x2160,0,0,
+                                          V4L2_PIX_FMT_UYVY,720x576,7,0,
+                                          V4L2_PIX_FMT_UYVY,720x480,7,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,7,0,
+                                          V4L2_PIX_FMT_YUYV,640x480,0,0,
+                                          V4L2_PIX_FMT_YUYV,1280x720,0,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,0,0,
+                                          V4L2_PIX_FMT_YUYV,2816x1600,0,0,
+                                          V4L2_PIX_FMT_YUYV,3840x2160,0,0,
+                                          V4L2_PIX_FMT_YUYV,720x576,7,0,
+                                          V4L2_PIX_FMT_YUYV,720x480,7,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XRGB32,640x480,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XRGB32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XRGB32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XRGB32,720x576,7,0,
+                                          V4L2_PIX_FMT_XRGB32,720x480,7,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XBGR32,640x480,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XBGR32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XBGR32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XBGR32,720x576,7,0,
+                                          V4L2_PIX_FMT_XBGR32,720x480,7,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,7,0"/>
+           <fpsRange value="10,30,10,60"/>
+       </StaticMetadata>
+
+       <supportedISysSizes value="640x480,720x480,720x576,1280x720,1920x1080,2816x1600,3840x2160"/> <!-- ascending order request -->
+       <supportedISysFormat value="V4L2_PIX_FMT_UYVY,V4L2_PIX_FMT_YUYV,V4L2_PIX_FMT_XRGB32,V4L2_PIX_FMT_XBGR32"/>
+       <enableAIQ value="false"/>
+    </Sensor>
+
+    <Sensor name="pixter_passthru_f" description="pixter as sensor for port F.">
+        <MediaCtlConfig id="0"> <!-- BE SOC capture -->
+            <format name="pixter_stubF pixel array 0-0078" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stubF scaler 0-0078" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stubF scaler 0-0078" pad="1"/>
+            <selection name="pixter_stubF scaler 0-0078" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="0" height="0"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="5"/>
+            <format name="Intel IPU6 CSI-2 5" pad="0"/>
+            <link srcName="pixter_stubF pixel array 0-0078" srcPad="0" sinkName="pixter_stubF scaler 0-0078" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubF scaler 0-0078" srcPad="1" sinkName="Intel IPU6 CSI-2 5" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 5" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="5" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="21" sinkName="Intel IPU6 BE SOC capture 5" sinkPad="0" enable="true"/>
+            <videonode name="Intel IPU6 BE SOC capture 5" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubF pixel array 0-0078" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubF scaler 0-0078" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 5" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_UYVY,640x480,0,0,
+                                          V4L2_PIX_FMT_UYVY,1280x720,0,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,0,0,
+                                          V4L2_PIX_FMT_UYVY,2816x1600,0,0,
+                                          V4L2_PIX_FMT_UYVY,3840x2160,0,0,
+                                          V4L2_PIX_FMT_UYVY,720x576,7,0,
+                                          V4L2_PIX_FMT_UYVY,720x480,7,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,7,0,
+                                          V4L2_PIX_FMT_YUYV,640x480,0,0,
+                                          V4L2_PIX_FMT_YUYV,1280x720,0,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,0,0,
+                                          V4L2_PIX_FMT_YUYV,2816x1600,0,0,
+                                          V4L2_PIX_FMT_YUYV,3840x2160,0,0,
+                                          V4L2_PIX_FMT_YUYV,720x576,7,0,
+                                          V4L2_PIX_FMT_YUYV,720x480,7,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XRGB32,640x480,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XRGB32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XRGB32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XRGB32,720x576,7,0,
+                                          V4L2_PIX_FMT_XRGB32,720x480,7,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XBGR32,640x480,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XBGR32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XBGR32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XBGR32,720x576,7,0,
+                                          V4L2_PIX_FMT_XBGR32,720x480,7,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,7,0"/>
+           <fpsRange value="10,30,10,60"/>
+       </StaticMetadata>
+
+       <supportedISysSizes value="640x480,720x480,720x576,1280x720,1920x1080,2816x1600,3840x2160"/> <!-- ascending order request -->
+       <supportedISysFormat value="V4L2_PIX_FMT_UYVY,V4L2_PIX_FMT_YUYV,V4L2_PIX_FMT_XRGB32,V4L2_PIX_FMT_XBGR32"/>
+       <enableAIQ value="false"/>
+    </Sensor>
+
+    <Sensor name="pixter_passthru_g" description="pixter as sensor for port G.">
+        <MediaCtlConfig id="0"> <!-- BE SOC capture -->
+            <format name="pixter_stubG pixel array 0-0077" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stubG scaler 0-0077" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stubG scaler 0-0077" pad="1"/>
+            <selection name="pixter_stubG scaler 0-0077" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="0" height="0"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="6"/>
+            <format name="Intel IPU6 CSI-2 6" pad="0"/>
+            <link srcName="pixter_stubG pixel array 0-0077" srcPad="0" sinkName="pixter_stubG scaler 0-0077" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubG scaler 0-0077" srcPad="1" sinkName="Intel IPU6 CSI-2 6" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 6" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="6" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="22" sinkName="Intel IPU6 BE SOC capture 6" sinkPad="0" enable="true"/>
+            <videonode name="Intel IPU6 BE SOC capture 6" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubG pixel array 0-0077" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubG scaler 0-0077" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 6" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_UYVY,640x480,0,0,
+                                          V4L2_PIX_FMT_UYVY,1280x720,0,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,0,0,
+                                          V4L2_PIX_FMT_UYVY,2816x1600,0,0,
+                                          V4L2_PIX_FMT_UYVY,3840x2160,0,0,
+                                          V4L2_PIX_FMT_UYVY,720x576,7,0,
+                                          V4L2_PIX_FMT_UYVY,720x480,7,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,7,0,
+                                          V4L2_PIX_FMT_YUYV,640x480,0,0,
+                                          V4L2_PIX_FMT_YUYV,1280x720,0,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,0,0,
+                                          V4L2_PIX_FMT_YUYV,2816x1600,0,0,
+                                          V4L2_PIX_FMT_YUYV,3840x2160,0,0,
+                                          V4L2_PIX_FMT_YUYV,720x576,7,0,
+                                          V4L2_PIX_FMT_YUYV,720x480,7,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XRGB32,640x480,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XRGB32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XRGB32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XRGB32,720x576,7,0,
+                                          V4L2_PIX_FMT_XRGB32,720x480,7,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XBGR32,640x480,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XBGR32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XBGR32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XBGR32,720x576,7,0,
+                                          V4L2_PIX_FMT_XBGR32,720x480,7,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,7,0"/>
+           <fpsRange value="10,30,10,60"/>
+       </StaticMetadata>
+
+       <supportedISysSizes value="640x480,720x480,720x576,1280x720,1920x1080,2816x1600,3840x2160"/> <!-- ascending order request -->
+       <supportedISysFormat value="V4L2_PIX_FMT_UYVY,V4L2_PIX_FMT_YUYV,V4L2_PIX_FMT_XRGB32,V4L2_PIX_FMT_XBGR32"/>
+       <enableAIQ value="false"/>
+    </Sensor>
+
+    <Sensor name="pixter_passthru_h" description="pixter as sensor for port H.">
+        <MediaCtlConfig id="0"> <!-- BE SOC capture -->
+            <format name="pixter_stubH pixel array 0-0076" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stubH scaler 0-0076" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stubH scaler 0-0076" pad="1"/>
+            <selection name="pixter_stubH scaler 0-0076" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="0" height="0"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="7"/>
+            <format name="Intel IPU6 CSI-2 7" pad="0"/>
+            <link srcName="pixter_stubH pixel array 0-0076" srcPad="0" sinkName="pixter_stubH scaler 0-0076" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stubH scaler 0-0076" srcPad="1" sinkName="Intel IPU6 CSI-2 7" sinkPad="0" enable="true"/>
+            <link srcName="Intel IPU6 CSI-2 7" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="7" enable="true"/>
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="23" sinkName="Intel IPU6 BE SOC capture 7" sinkPad="0" enable="true"/>
+            <videonode name="Intel IPU6 BE SOC capture 7" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stubH pixel array 0-0076" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stubH scaler 0-0076" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 7" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_UYVY,640x480,0,0,
+                                          V4L2_PIX_FMT_UYVY,1280x720,0,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,0,0,
+                                          V4L2_PIX_FMT_UYVY,2816x1600,0,0,
+                                          V4L2_PIX_FMT_UYVY,3840x2160,0,0,
+                                          V4L2_PIX_FMT_UYVY,720x576,7,0,
+                                          V4L2_PIX_FMT_UYVY,720x480,7,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,7,0,
+                                          V4L2_PIX_FMT_YUYV,640x480,0,0,
+                                          V4L2_PIX_FMT_YUYV,1280x720,0,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,0,0,
+                                          V4L2_PIX_FMT_YUYV,2816x1600,0,0,
+                                          V4L2_PIX_FMT_YUYV,3840x2160,0,0,
+                                          V4L2_PIX_FMT_YUYV,720x576,7,0,
+                                          V4L2_PIX_FMT_YUYV,720x480,7,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XRGB32,640x480,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XRGB32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XRGB32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XRGB32,720x576,7,0,
+                                          V4L2_PIX_FMT_XRGB32,720x480,7,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XBGR32,640x480,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XBGR32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XBGR32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XBGR32,720x576,7,0,
+                                          V4L2_PIX_FMT_XBGR32,720x480,7,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,7,0"/>
+           <fpsRange value="10,30,10,60"/>
+       </StaticMetadata>
+
+       <supportedISysSizes value="640x480,720x480,720x576,1280x720,1920x1080,2816x1600,3840x2160"/> <!-- ascending order request -->
+       <supportedISysFormat value="V4L2_PIX_FMT_UYVY,V4L2_PIX_FMT_YUYV,V4L2_PIX_FMT_XRGB32,V4L2_PIX_FMT_XBGR32"/>
+       <enableAIQ value="false"/>
+    </Sensor>
+
+    <Sensor name="pixter_passthru_port0_vc0" description="pixter as sensor (port0 vc0)" virtualChannel="true" vcSeq="1" vcNum="1" vcGroupId="0">
+        <MediaCtlConfig id="0"> <!-- UYVY BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stub scaler 0-007d" pad="1"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="0" height="0"/>
+
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0"/>
+            <format name="Intel IPU6 CSI-2 0" pad="1"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="0"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="16"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="0" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="1" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="0" srcPad="1" srcStream="0" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="16" sinkName="Intel IPU6 BE SOC capture 0" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="0" sinkStream="0" srcPad="16" srcStream="0" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 0" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_UYVY,640x480,0,0,
+                                          V4L2_PIX_FMT_UYVY,1280x720,0,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,0,0,
+                                          V4L2_PIX_FMT_UYVY,2816x1600,0,0,
+                                          V4L2_PIX_FMT_UYVY,3840x2160,0,0,
+                                          V4L2_PIX_FMT_UYVY,720x576,7,0,
+                                          V4L2_PIX_FMT_UYVY,720x480,7,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,7,0,
+                                          V4L2_PIX_FMT_YUYV,640x480,0,0,
+                                          V4L2_PIX_FMT_YUYV,1280x720,0,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,0,0,
+                                          V4L2_PIX_FMT_YUYV,2816x1600,0,0,
+                                          V4L2_PIX_FMT_YUYV,3840x2160,0,0,
+                                          V4L2_PIX_FMT_YUYV,720x576,7,0,
+                                          V4L2_PIX_FMT_YUYV,720x480,7,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XRGB32,640x480,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XRGB32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XRGB32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XRGB32,720x576,7,0,
+                                          V4L2_PIX_FMT_XRGB32,720x480,7,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XBGR32,640x480,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XBGR32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XBGR32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XBGR32,720x576,7,0,
+                                          V4L2_PIX_FMT_XBGR32,720x480,7,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,7,0"/>
+           <fpsRange value="10,30,10,60"/>
+       </StaticMetadata>
+
+       <supportedISysSizes value="640x480,720x480,720x576,1280x720,1920x1080,2816x1600,3840x2160"/> <!-- ascending order request -->
+       <supportedISysFormat value="V4L2_PIX_FMT_UYVY,V4L2_PIX_FMT_YUYV,V4L2_PIX_FMT_XRGB32,V4L2_PIX_FMT_XBGR32"/>
+       <enableAIQ value="false"/>
+    </Sensor>
+
+    <Sensor name="pixter_passthru_port0_vc1" description="pixter as sensor (port0 vc1)" virtualChannel="true" vcSeq="2" vcNum="1" vcGroupId="0">
+        <MediaCtlConfig id="0"> <!-- UYVY BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stub scaler 0-007d" pad="1"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="0" height="0"/>
+
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="1"/>
+            <format name="Intel IPU6 CSI-2 0" pad="2"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="1"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="17"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="1" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="2" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="1" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="1" srcPad="2" srcStream="1" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="17" sinkName="Intel IPU6 BE SOC capture 1" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="1" sinkStream="1" srcPad="17" srcStream="1" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 1" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_UYVY,640x480,0,0,
+                                          V4L2_PIX_FMT_UYVY,1280x720,0,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,0,0,
+                                          V4L2_PIX_FMT_UYVY,2816x1600,0,0,
+                                          V4L2_PIX_FMT_UYVY,3840x2160,0,0,
+                                          V4L2_PIX_FMT_UYVY,720x576,7,0,
+                                          V4L2_PIX_FMT_UYVY,720x480,7,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,7,0,
+                                          V4L2_PIX_FMT_YUYV,640x480,0,0,
+                                          V4L2_PIX_FMT_YUYV,1280x720,0,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,0,0,
+                                          V4L2_PIX_FMT_YUYV,2816x1600,0,0,
+                                          V4L2_PIX_FMT_YUYV,3840x2160,0,0,
+                                          V4L2_PIX_FMT_YUYV,720x576,7,0,
+                                          V4L2_PIX_FMT_YUYV,720x480,7,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XRGB32,640x480,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XRGB32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XRGB32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XRGB32,720x576,7,0,
+                                          V4L2_PIX_FMT_XRGB32,720x480,7,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XBGR32,640x480,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XBGR32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XBGR32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XBGR32,720x576,7,0,
+                                          V4L2_PIX_FMT_XBGR32,720x480,7,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,7,0"/>
+           <fpsRange value="10,30,10,60"/>
+       </StaticMetadata>
+
+       <supportedISysSizes value="640x480,720x480,720x576,1280x720,1920x1080,2816x1600,3840x2160"/> <!-- ascending order request -->
+       <supportedISysFormat value="V4L2_PIX_FMT_UYVY,V4L2_PIX_FMT_YUYV,V4L2_PIX_FMT_XRGB32,V4L2_PIX_FMT_XBGR32"/>
+       <enableAIQ value="false"/>
+    </Sensor>
+
+    <Sensor name="pixter_passthru_port0_vc2" description="pixter as sensor (port0 vc2)" virtualChannel="true" vcSeq="3" vcNum="1" vcGroupId="0">
+        <MediaCtlConfig id="0"> <!-- UYVY BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stub scaler 0-007d" pad="1"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="0" height="0"/>
+
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="2"/>
+            <format name="Intel IPU6 CSI-2 0" pad="3"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="2"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="18"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="2" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="3" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="2" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="2" srcPad="3" srcStream="2" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="18" sinkName="Intel IPU6 BE SOC capture 2" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="2" sinkStream="2" srcPad="18" srcStream="2" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 2" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_UYVY,640x480,0,0,
+                                          V4L2_PIX_FMT_UYVY,1280x720,0,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,0,0,
+                                          V4L2_PIX_FMT_UYVY,2816x1600,0,0,
+                                          V4L2_PIX_FMT_UYVY,3840x2160,0,0,
+                                          V4L2_PIX_FMT_UYVY,720x576,7,0,
+                                          V4L2_PIX_FMT_UYVY,720x480,7,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,7,0,
+                                          V4L2_PIX_FMT_YUYV,640x480,0,0,
+                                          V4L2_PIX_FMT_YUYV,1280x720,0,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,0,0,
+                                          V4L2_PIX_FMT_YUYV,2816x1600,0,0,
+                                          V4L2_PIX_FMT_YUYV,3840x2160,0,0,
+                                          V4L2_PIX_FMT_YUYV,720x576,7,0,
+                                          V4L2_PIX_FMT_YUYV,720x480,7,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XRGB32,640x480,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XRGB32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XRGB32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XRGB32,720x576,7,0,
+                                          V4L2_PIX_FMT_XRGB32,720x480,7,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XBGR32,640x480,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XBGR32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XBGR32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XBGR32,720x576,7,0,
+                                          V4L2_PIX_FMT_XBGR32,720x480,7,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,7,0"/>
+           <fpsRange value="10,30,10,60"/>
+       </StaticMetadata>
+
+       <supportedISysSizes value="640x480,720x480,720x576,1280x720,1920x1080,2816x1600,3840x2160"/> <!-- ascending order request -->
+       <supportedISysFormat value="V4L2_PIX_FMT_UYVY,V4L2_PIX_FMT_YUYV,V4L2_PIX_FMT_XRGB32,V4L2_PIX_FMT_XBGR32"/>
+       <enableAIQ value="false"/>
+    </Sensor>
+
+    <Sensor name="pixter_passthru_port0_vc3" description="pixter as sensor (port0 vc3)" virtualChannel="true" vcSeq="4" vcNum="1" vcGroupId="0">
+        <MediaCtlConfig id="0"> <!-- UYVY BE capture -->
+            <format name="pixter_stub pixel array 0-007d" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stub scaler 0-007d" pad="0" width="4096" height="3072"/>
+            <format name="pixter_stub scaler 0-007d" pad="1"/>
+            <selection name="pixter_stub scaler 0-007d" pad="0" target="V4L2_SEL_TGT_COMPOSE" top="0" left="0" width="0" height="0"/>
+
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="0"/>
+            <format name="Intel IPU6 CSI-2 0" pad="0" stream="3"/>
+            <format name="Intel IPU6 CSI-2 0" pad="4"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="3"/>
+            <format name="Intel IPU6 CSI2 BE SOC" pad="19"/>
+
+            <!-- flag in "route" is OR by the followings: MEDIA_LNK_FL_ENABLED:(1 << 0), MEDIA_LNK_FL_IMMUTABLE:(1 << 1), MEDIA_LNK_FL_DYNAMIC:(1 << 2) -->
+            <link srcName="pixter_stub pixel array 0-007d" srcPad="0" sinkName="pixter_stub scaler 0-007d" sinkPad="0" enable="true"/>
+            <link srcName="pixter_stub scaler 0-007d" srcPad="1" sinkName="Intel IPU6 CSI-2 0" sinkPad="0" enable="true"/>
+            <route name="pixter_stub scaler 0-007d" sinkPad="0" sinkStream="0" srcPad="1" srcStream="3" flag="5"/>
+
+            <link srcName="Intel IPU6 CSI-2 0" srcPad="4" sinkName="Intel IPU6 CSI2 BE SOC" sinkPad="3" enable="true"/>
+            <route name="Intel IPU6 CSI-2 0" sinkPad="0" sinkStream="3" srcPad="4" srcStream="3" flag="1"/>
+
+            <link srcName="Intel IPU6 CSI2 BE SOC" srcPad="19" sinkName="Intel IPU6 BE SOC capture 3" sinkPad="0" enable="true"/>
+            <route name="Intel IPU6 CSI2 BE SOC" sinkPad="3" sinkStream="3" srcPad="19" srcStream="3" flag="1"/>
+
+            <videonode name="Intel IPU6 BE SOC capture 3" videoNodeType="VIDEO_GENERIC"/>
+            <videonode name="pixter_stub pixel array 0-007d" videoNodeType="VIDEO_PIXEL_ARRAY"/>
+            <videonode name="pixter_stub scaler 0-007d" videoNodeType="VIDEO_PIXEL_SCALER"/>
+            <videonode name="Intel IPU6 CSI-2 0" videoNodeType="VIDEO_ISYS_RECEIVER"/>
+        </MediaCtlConfig>
+
+        <StaticMetadata>
+            <!-- list of stream config info. Meanings of each part is "format,widthxheight,field(0 is none, 7 is alternate),mcId" -->
+            <supportedStreamConfig value="V4L2_PIX_FMT_UYVY,640x480,0,0,
+                                          V4L2_PIX_FMT_UYVY,1280x720,0,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,0,0,
+                                          V4L2_PIX_FMT_UYVY,2816x1600,0,0,
+                                          V4L2_PIX_FMT_UYVY,3840x2160,0,0,
+                                          V4L2_PIX_FMT_UYVY,720x576,7,0,
+                                          V4L2_PIX_FMT_UYVY,720x480,7,0,
+                                          V4L2_PIX_FMT_UYVY,1920x1080,7,0,
+                                          V4L2_PIX_FMT_YUYV,640x480,0,0,
+                                          V4L2_PIX_FMT_YUYV,1280x720,0,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,0,0,
+                                          V4L2_PIX_FMT_YUYV,2816x1600,0,0,
+                                          V4L2_PIX_FMT_YUYV,3840x2160,0,0,
+                                          V4L2_PIX_FMT_YUYV,720x576,7,0,
+                                          V4L2_PIX_FMT_YUYV,720x480,7,0,
+                                          V4L2_PIX_FMT_YUYV,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XRGB32,640x480,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XRGB32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XRGB32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XRGB32,720x576,7,0,
+                                          V4L2_PIX_FMT_XRGB32,720x480,7,0,
+                                          V4L2_PIX_FMT_XRGB32,1920x1080,7,0,
+                                          V4L2_PIX_FMT_XBGR32,640x480,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1280x720,0,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,0,0,
+                                          V4L2_PIX_FMT_XBGR32,2816x1600,0,0,
+                                          V4L2_PIX_FMT_XBGR32,3840x2160,0,0,
+                                          V4L2_PIX_FMT_XBGR32,720x576,7,0,
+                                          V4L2_PIX_FMT_XBGR32,720x480,7,0,
+                                          V4L2_PIX_FMT_XBGR32,1920x1080,7,0"/>
+           <fpsRange value="10,30,10,60"/>
+       </StaticMetadata>
+
+       <supportedISysSizes value="640x480,720x480,720x576,1280x720,1920x1080,2816x1600,3840x2160"/> <!-- ascending order request -->
+       <supportedISysFormat value="V4L2_PIX_FMT_UYVY,V4L2_PIX_FMT_YUYV,V4L2_PIX_FMT_XRGB32,V4L2_PIX_FMT_XBGR32"/>
+       <enableAIQ value="false"/>
+    </Sensor>
+</CameraSettings>

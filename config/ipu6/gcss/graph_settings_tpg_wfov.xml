@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (c) 2018 Intel Corporation
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<graph_settings>
+
+    <sensor_modes>
+        <sensor_mode name="3840x2160" id="1" width="3840" height="2160"/>
+    </sensor_modes>
+
+    <settings key="9811" id="100003" op_mode="NORMAL" active_outputs="1">
+        <video0 width="3840" height="2160" stream_id="60001"/>
+        <sensor mode_id="3840x2160" analogue_gain="0" exposure="100" vflip="0" hflip="0">
+            <port_0 type="port" width="3840" height="2160" format="BA12"/>
+        </sensor>
+        <csi_be>
+            <output width="3840" height="2160" format="BA12" />
+        </csi_be>
+        <ipu6_isa_lb_video stream_id="60001">
+            <!-- ports -->
+            <main width="3840" height="2160" format="V420" />
+        </ipu6_isa_lb_video>
+        <ipu6_post_gdc_video_3 stream_id="60001">
+            <main width="3840" height="2160" format="NV12" peer="video0"/>
+            <display enabled="0"/>
+            <postproc enabled="0"/>
+            <gdc5>
+                <input width="3840" height="2160" left="0" top="0" right="0" bottom="0"/>
+                <output width="3840" height="2208" left="0" top="-40" right="0" bottom="-8"/>
+            </gdc5>
+            <tnr_6_0>
+                <input width="3840" height="2208" left="0" top="28" right="0" bottom="4"/>
+                <output width="3840" height="2176" left="0" top="0" right="0" bottom="0"/>
+            </tnr_6_0>
+            <ofa_2_mp>
+                <input width="3840" height="2176" left="0" top="8" right="0" bottom="0"/>
+                <output width="3840" height="2160" left="0" top="0" right="0" bottom="0"/>
+            </ofa_2_mp>
+        </ipu6_post_gdc_video_3>
+    </settings>
+</graph_settings>
